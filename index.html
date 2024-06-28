@@ -69,6 +69,139 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Lmr-first-memory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/28/Lmr-first-memory/" class="article-date">
+  <time class="dt-published" datetime="2024-06-28T01:08:14.000Z" itemprop="datePublished">2024-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/28/Lmr-first-memory/">Lmrzzz-first-blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="https://file+.vscode-resource.vscode-cdn.net/C:/Users/90819/Pictures/ItCastPicture/class.drawio.png" alt="图片"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/28/Lmr-first-memory/" data-id="clxy2f6ue0001rcv0cjyrgt81" data-title="Lmrzzz-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Lmr-first-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/27/Lmr-first-blog/" class="article-date">
+  <time class="dt-published" datetime="2024-06-27T13:08:14.000Z" itemprop="datePublished">2024-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/27/Lmr-first-blog/">Lmrzzz-first-blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>斗地主手牌排序<br>困惑：<br>&nbsp;        如何将一个字符串列表(扑克牌)进行排序呢？<br>思路：<br>&nbsp;        使用sort 重写sort方法(利用lambda进行简化)<br>遇到的困难：<br>&nbsp;        1没有将字母转化为数字的思路，无法进行排序;2大小王该如何去排序呢？<br>收获:<br>&nbsp;        1熟练调用String的Integer.parseInt api<br>&nbsp;        2重写sort的思路<br>&nbsp;        3熟悉lambda表达式基本简化<br>&nbsp;        4注意Array的toString.sout 输出的结果多了[]和一些空格，这些不会改变原数组的值，仅仅是展示的时候为了好看</p>
+<p>关键代码:</p>
+<html>
+<head>
+static public ArrayList unJokerSort(ArrayList<String> arrayList){
+ arrayList.sort((o1, o2) -> {
+ String s1=o1.substring(1);
+ String s2=o2.substring(1);
+ int x1=conVert(s1);
+ int x2=conVert(s2);
+ return x1-x2;
+ });
+ return arrayList;
+ }
+其中convert函数:
+static public int conVert(String s){
+   switch (s){
+              case "10"->{
+ return 10;
+ }
+ case "J"->{
+ return 11;
+ }
+ case "Q"->{
+ return 12;
+ }
+ case "K"->{
+ return 13;
+ }
+ case "A"->{
+ return 14;
+ }
+ case "2"->{
+ return 15;
+ }
+  default -> {
+ for (char c:s.toCharArray()){
+ if (Character.isDigit(c)){
+ int num=Integer.parseInt(s);
+ return num;
+ }
+ }
+ }
+ }
+ return 0;
+ }
+</head>
+</html>
+<html>
+<head>
+</head>
+</html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/27/Lmr-first-blog/" data-id="clxy2f6uc0000rcv0e40j8q1i" data-title="Lmrzzz-first-blog" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/06/27/hello-world/" class="article-date">
@@ -130,9 +263,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -149,6 +296,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/06/28/Lmr-first-memory/">Lmrzzz-first-blog</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/27/Lmr-first-blog/">Lmrzzz-first-blog</a>
+          </li>
         
           <li>
             <a href="/2024/06/27/hello-world/">Hello World</a>
