@@ -6,15 +6,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Java基础篇–初认sort 斗地主手牌排序title: chenge-first-blogdate: 2021-07-22 14:08:14tags:困惑：        如何将一个字符串列表(扑克牌)进行排序呢？思路：        使用sort 重写sort方法(利用lambda进行简化)遇到的困难：        1没有将字母转化为数字的思路，无法进行排序;2大小王该如何去排序呢？收获:">
+  <meta name="description" content="Java基础篇–初认sort 斗地主手牌排序title: Lmrzzz-first-blogdate:  2024-06-27 21:08:14tags:#lambda #重写 困惑：&nbsp;        如何将一个字符串列表(扑克牌)进行排序呢？思路：&nbsp;        使用sort 重写sort方法(利用lambda进行简化)遇到的困难：&nbsp;        1没有将字母转">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/2024/06/27/Lmr-first-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Java基础篇–初认sort 斗地主手牌排序title: chenge-first-blogdate: 2021-07-22 14:08:14tags:困惑：        如何将一个字符串列表(扑克牌)进行排序呢？思路：        使用sort 重写sort方法(利用lambda进行简化)遇到的困难：        1没有将字母转化为数字的思路，无法进行排序;2大小王该如何去排序呢？收获:">
+<meta property="og:description" content="Java基础篇–初认sort 斗地主手牌排序title: Lmrzzz-first-blogdate:  2024-06-27 21:08:14tags:#lambda #重写 困惑：&nbsp;        如何将一个字符串列表(扑克牌)进行排序呢？思路：&nbsp;        使用sort 重写sort方法(利用lambda进行简化)遇到的困难：&nbsp;        1没有将字母转">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-27T12:30:30.440Z">
-<meta property="article:modified_time" content="2024-06-27T12:37:44.379Z">
+<meta property="article:modified_time" content="2024-06-28T01:20:31.566Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -83,8 +83,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Java基础篇–初认sort-斗地主手牌排序"><a href="#Java基础篇–初认sort-斗地主手牌排序" class="headerlink" title="Java基础篇–初认sort 斗地主手牌排序"></a>Java基础篇–初认sort 斗地主手牌排序</h2><h2 id="title-chenge-first-blogdate-2021-07-22-14-08-14tags"><a href="#title-chenge-first-blogdate-2021-07-22-14-08-14tags" class="headerlink" title="title: chenge-first-blogdate: 2021-07-22 14:08:14tags:"></a>title: chenge-first-blog<br>date: 2021-07-22 14:08:14<br>tags:</h2><p>困惑：<br>        如何将一个字符串列表(扑克牌)进行排序呢？<br>思路：<br>        使用sort 重写sort方法(利用lambda进行简化)<br>遇到的困难：<br>        1没有将字母转化为数字的思路，无法进行排序;2大小王该如何去排序呢？<br>收获:<br>        1熟练调用String的Integer.parseInt api<br>        2重写sort的思路<br>        3熟悉lambda表达式基本简化   </p>
-<p>关键代码:<br>static public ArrayList unJokerSort(ArrayList<String> arrayList){<br>        arrayList.sort((o1, o2) -&gt; {<br>            String s1&#x3D;o1.substring(1);<br>            String s2&#x3D;o2.substring(1);<br>            int x1&#x3D;conVert(s1);<br>            int x2&#x3D;conVert(s2);<br>        return x1-x2;<br>        });<br>        return arrayList;<br>    }<br>其中convert函数:<br>static public int conVert(String s){<br>        switch (s){<br>            case “10”-&gt;{<br>                return 10;<br>            }<br>            case “J”-&gt;{<br>                return 11;<br>            }<br>            case “Q”-&gt;{<br>                return 12;<br>            }<br>            case “K”-&gt;{<br>                return 13;<br>            }<br>            case “A”-&gt;{<br>                return 14;<br>            }<br>            case “2”-&gt;{<br>                return 15;<br>            }<br>            default -&gt; {<br>                for (char c:s.toCharArray()){<br>                    if (Character.isDigit(c)){<br>                        int num&#x3D;Integer.parseInt(s);<br>                        return num;<br>                    }<br>                }<br>            }<br>        }<br>        return 0;<br>    }</p>
+        <h2 id="Java基础篇–初认sort-斗地主手牌排序"><a href="#Java基础篇–初认sort-斗地主手牌排序" class="headerlink" title="Java基础篇–初认sort 斗地主手牌排序"></a>Java基础篇–初认sort 斗地主手牌排序</h2><h2 id="title-Lmrzzz-first-blogdate-2024-06-27-21-08-14tags-lambda-重写"><a href="#title-Lmrzzz-first-blogdate-2024-06-27-21-08-14tags-lambda-重写" class="headerlink" title="title: Lmrzzz-first-blogdate:  2024-06-27 21:08:14tags:#lambda #重写 "></a>title: Lmrzzz-first-blog<br>date:  2024-06-27 21:08:14<br>tags:#lambda #重写 </h2><p>困惑：<br>&nbsp;        如何将一个字符串列表(扑克牌)进行排序呢？<br>思路：<br>&nbsp;        使用sort 重写sort方法(利用lambda进行简化)<br>遇到的困难：<br>&nbsp;        1没有将字母转化为数字的思路，无法进行排序;2大小王该如何去排序呢？<br>收获:<br>&nbsp;        1熟练调用String的Integer.parseInt api<br>&nbsp;        2重写sort的思路<br>&nbsp;        3熟悉lambda表达式基本简化<br>&nbsp;        4注意Array的toString.sout 输出的结果多了[]和一些空格，这些不会改变原数组的值，仅仅是展示的时候为了好看</p>
+<p>关键代码:<br>static public ArrayList unJokerSort(ArrayList<String> arrayList){<br>        &nbsp;arrayList.sort((o1, o2) -&gt; {<br>            &nbsp;String s1&#x3D;o1.substring(1);<br>            &nbsp;String s2&#x3D;o2.substring(1);<br>            &nbsp;int x1&#x3D;conVert(s1);<br>            &nbsp;int x2&#x3D;conVert(s2);<br>        &nbsp;return x1-x2;<br>        &nbsp;});<br>        &nbsp;return arrayList;<br>    &nbsp;}<br>其中convert函数:<br>static public int conVert(String s){<br>&nbsp;  switch (s){<br>&nbsp;&nbsp;            case “10”-&gt;{<br>                &nbsp;return 10;<br>            &nbsp;}<br>            &nbsp;case “J”-&gt;{<br>                &nbsp;return 11;<br>            &nbsp;}<br>            &nbsp;case “Q”-&gt;{<br>                &nbsp;return 12;<br>            &nbsp;}<br>            &nbsp;case “K”-&gt;{<br>                &nbsp;return 13;<br>            &nbsp;}<br>            &nbsp;case “A”-&gt;{<br>                &nbsp;return 14;<br>            &nbsp;}<br>            &nbsp;case “2”-&gt;{<br>                &nbsp;return 15;<br>            &nbsp;}<br>           &nbsp; default -&gt; {<br>                &nbsp;for (char c:s.toCharArray()){<br>                    &nbsp;if (Character.isDigit(c)){<br>                        &nbsp;int num&#x3D;Integer.parseInt(s);<br>&nbsp;return num;<br>                    &nbsp;}<br>                &nbsp;}<br>            &nbsp;}<br>        &nbsp;}<br>        &nbsp;return 0;<br>    &nbsp;}</p>
 
       
     </div>
@@ -98,6 +98,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2024/06/28/Lmr-first-memory/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2024/06/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -138,6 +147,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/06/28/Lmr-first-memory/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2024/06/27/Lmr-first-blog/">(no title)</a>

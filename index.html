@@ -69,6 +69,36 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Lmr-first-memory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/28/Lmr-first-memory/" class="article-date">
+  <time class="dt-published" datetime="2024-06-28T01:09:51.941Z" itemprop="datePublished">2024-06-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Java基础篇–方法，堆，栈内存示意图</p>
+<hr>
+<h2 id="title-Lmrzzz-first-blogdate-2024-06-28-09-08-14tags-静态-存储"><a href="#title-Lmrzzz-first-blogdate-2024-06-28-09-08-14tags-静态-存储" class="headerlink" title="title: Lmrzzz-first-blogdate: 2024-06-28 09:08:14tags:#静态#存储"></a>title: Lmrzzz-first-blog<br>date: 2024-06-28 09:08:14<br>tags:#静态#存储</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/28/Lmr-first-memory/" data-id="clxy0g3kx0000psv01vv89jk3" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Lmr-first-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/06/27/Lmr-first-blog/" class="article-date">
@@ -81,8 +111,8 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Java基础篇–初认sort-斗地主手牌排序"><a href="#Java基础篇–初认sort-斗地主手牌排序" class="headerlink" title="Java基础篇–初认sort 斗地主手牌排序"></a>Java基础篇–初认sort 斗地主手牌排序</h2><h2 id="title-chenge-first-blogdate-2021-07-22-14-08-14tags"><a href="#title-chenge-first-blogdate-2021-07-22-14-08-14tags" class="headerlink" title="title: chenge-first-blogdate: 2021-07-22 14:08:14tags:"></a>title: chenge-first-blog<br>date: 2021-07-22 14:08:14<br>tags:</h2><p>困惑：<br>        如何将一个字符串列表(扑克牌)进行排序呢？<br>思路：<br>        使用sort 重写sort方法(利用lambda进行简化)<br>遇到的困难：<br>        1没有将字母转化为数字的思路，无法进行排序;2大小王该如何去排序呢？<br>收获:<br>        1熟练调用String的Integer.parseInt api<br>        2重写sort的思路<br>        3熟悉lambda表达式基本简化   </p>
-<p>关键代码:<br>static public ArrayList unJokerSort(ArrayList<String> arrayList){<br>        arrayList.sort((o1, o2) -&gt; {<br>            String s1&#x3D;o1.substring(1);<br>            String s2&#x3D;o2.substring(1);<br>            int x1&#x3D;conVert(s1);<br>            int x2&#x3D;conVert(s2);<br>        return x1-x2;<br>        });<br>        return arrayList;<br>    }<br>其中convert函数:<br>static public int conVert(String s){<br>        switch (s){<br>            case “10”-&gt;{<br>                return 10;<br>            }<br>            case “J”-&gt;{<br>                return 11;<br>            }<br>            case “Q”-&gt;{<br>                return 12;<br>            }<br>            case “K”-&gt;{<br>                return 13;<br>            }<br>            case “A”-&gt;{<br>                return 14;<br>            }<br>            case “2”-&gt;{<br>                return 15;<br>            }<br>            default -&gt; {<br>                for (char c:s.toCharArray()){<br>                    if (Character.isDigit(c)){<br>                        int num&#x3D;Integer.parseInt(s);<br>                        return num;<br>                    }<br>                }<br>            }<br>        }<br>        return 0;<br>    }</p>
+        <h2 id="Java基础篇–初认sort-斗地主手牌排序"><a href="#Java基础篇–初认sort-斗地主手牌排序" class="headerlink" title="Java基础篇–初认sort 斗地主手牌排序"></a>Java基础篇–初认sort 斗地主手牌排序</h2><h2 id="title-Lmrzzz-first-blogdate-2024-06-27-21-08-14tags-lambda-重写"><a href="#title-Lmrzzz-first-blogdate-2024-06-27-21-08-14tags-lambda-重写" class="headerlink" title="title: Lmrzzz-first-blogdate:  2024-06-27 21:08:14tags:#lambda #重写 "></a>title: Lmrzzz-first-blog<br>date:  2024-06-27 21:08:14<br>tags:#lambda #重写 </h2><p>困惑：<br>&nbsp;        如何将一个字符串列表(扑克牌)进行排序呢？<br>思路：<br>&nbsp;        使用sort 重写sort方法(利用lambda进行简化)<br>遇到的困难：<br>&nbsp;        1没有将字母转化为数字的思路，无法进行排序;2大小王该如何去排序呢？<br>收获:<br>&nbsp;        1熟练调用String的Integer.parseInt api<br>&nbsp;        2重写sort的思路<br>&nbsp;        3熟悉lambda表达式基本简化<br>&nbsp;        4注意Array的toString.sout 输出的结果多了[]和一些空格，这些不会改变原数组的值，仅仅是展示的时候为了好看</p>
+<p>关键代码:<br>static public ArrayList unJokerSort(ArrayList<String> arrayList){<br>        &nbsp;arrayList.sort((o1, o2) -&gt; {<br>            &nbsp;String s1&#x3D;o1.substring(1);<br>            &nbsp;String s2&#x3D;o2.substring(1);<br>            &nbsp;int x1&#x3D;conVert(s1);<br>            &nbsp;int x2&#x3D;conVert(s2);<br>        &nbsp;return x1-x2;<br>        &nbsp;});<br>        &nbsp;return arrayList;<br>    &nbsp;}<br>其中convert函数:<br>static public int conVert(String s){<br>&nbsp;  switch (s){<br>&nbsp;&nbsp;            case “10”-&gt;{<br>                &nbsp;return 10;<br>            &nbsp;}<br>            &nbsp;case “J”-&gt;{<br>                &nbsp;return 11;<br>            &nbsp;}<br>            &nbsp;case “Q”-&gt;{<br>                &nbsp;return 12;<br>            &nbsp;}<br>            &nbsp;case “K”-&gt;{<br>                &nbsp;return 13;<br>            &nbsp;}<br>            &nbsp;case “A”-&gt;{<br>                &nbsp;return 14;<br>            &nbsp;}<br>            &nbsp;case “2”-&gt;{<br>                &nbsp;return 15;<br>            &nbsp;}<br>           &nbsp; default -&gt; {<br>                &nbsp;for (char c:s.toCharArray()){<br>                    &nbsp;if (Character.isDigit(c)){<br>                        &nbsp;int num&#x3D;Integer.parseInt(s);<br>&nbsp;return num;<br>                    &nbsp;}<br>                &nbsp;}<br>            &nbsp;}<br>        &nbsp;}<br>        &nbsp;return 0;<br>    &nbsp;}</p>
 
       
     </div>
@@ -179,6 +209,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/06/28/Lmr-first-memory/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2024/06/27/Lmr-first-blog/">(no title)</a>
