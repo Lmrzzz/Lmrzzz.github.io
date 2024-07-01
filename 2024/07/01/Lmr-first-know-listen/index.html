@@ -4,23 +4,20 @@
   <meta charset="utf-8">
   
   
-  <title>Lmrzzz-first-memory | Hexo</title>
+  <title>Lmrzzz-first-swing | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="Lmrzzz-first-memory">
-<meta property="og:url" content="http://example.com/2024/06/28/Lmr-first-memory/index.html">
+  <meta name="description" content="困惑-&gt;如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？思路-&gt;利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类遇到的困难收获-&gt;学习监听事件发现跟js的监听一模一样关键代码: 12345678910111213141516send &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lmrzzz-first-swing">
+<meta property="og:url" content="http://example.com/2024/07/01/Lmr-first-know-listen/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="困惑-&gt;如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？思路-&gt;利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类遇到的困难收获-&gt;学习监听事件发现跟js的监听一模一样关键代码: 12345678910111213141516send &#x3D;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/class.drawio.png">
-<meta property="og:image" content="http://example.com/source/_posts/Lmr-first-memory/class.drawio.png">
-<meta property="og:image" content="http://example.com/class.drawio.png">
-<meta property="article:published_time" content="2024-06-28T01:08:14.000Z">
-<meta property="article:modified_time" content="2024-06-28T06:48:27.802Z">
+<meta property="article:published_time" content="2024-07-01T11:30:15.000Z">
+<meta property="article:modified_time" content="2024-07-01T11:50:49.434Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="静态">
-<meta property="article:tag" content="存储">
+<meta property="article:tag" content="事件监听">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/class.drawio.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -75,10 +72,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Lmr-first-memory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Lmr-first-know-listen" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/06/28/Lmr-first-memory/" class="article-date">
-  <time class="dt-published" datetime="2024-06-28T01:08:14.000Z" itemprop="datePublished">2024-06-28</time>
+    <a href="/2024/07/01/Lmr-first-know-listen/" class="article-date">
+  <time class="dt-published" datetime="2024-07-01T11:30:15.000Z" itemprop="datePublished">2024-07-01</time>
 </a>
     
   </div>
@@ -89,7 +86,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Lmrzzz-first-memory
+      Lmrzzz-first-swing
     </h1>
   
 
@@ -97,16 +94,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><img src="/./images/class.drawio.png" alt="图片"><br><img src="/source/_posts/Lmr-first-memory/class.drawio.png" alt="ww"><br><img src="/class.drawio.png" alt="ww"></p>
+        <h2 id="困惑-如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？"><a href="#困惑-如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？" class="headerlink" title="困惑-&gt;如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？"></a>困惑-&gt;如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？</h2><h2 id="思路-利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类"><a href="#思路-利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类" class="headerlink" title="思路-&gt;利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类"></a>思路-&gt;利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类</h2><h2 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h2><h2 id="收获-学习监听事件发现跟js的监听一模一样"><a href="#收获-学习监听事件发现跟js的监听一模一样" class="headerlink" title="收获-&gt;学习监听事件发现跟js的监听一模一样"></a>收获-&gt;学习监听事件发现跟js的监听一模一样</h2><p>关键代码:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">send = <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;发送&quot;</span>);</span><br><span class="line">        send.setBounds(<span class="number">200</span>,<span class="number">230</span>,<span class="number">70</span>,<span class="number">20</span>);</span><br><span class="line">        send.addActionListener(e -&gt; &#123;</span><br><span class="line">            jTxtArea.append(jTextField.getText()+<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">            jTextField.setText(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        jTextField=<span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">        jTextField.setBounds(<span class="number">10</span>,<span class="number">230</span>,<span class="number">180</span>,<span class="number">20</span>);</span><br><span class="line">        jTextField.addKeyListener(<span class="keyword">new</span> <span class="title class_">KeyAdapter</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">keyPressed</span><span class="params">(KeyEvent e)</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (e.getKeyCode()== KeyEvent.VK_ENTER)&#123;</span><br><span class="line">                    send.doClick();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);        </span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/28/Lmr-first-memory/" data-id="clxyc2okw0006ykv0ah2dehxt" data-title="Lmrzzz-first-memory" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/07/01/Lmr-first-know-listen/" data-id="cly30kt3800000ov094ewcp4u" data-title="Lmrzzz-first-swing" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li></ul>
 
     </footer>
   </div>
@@ -114,19 +112,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/06/28/Lmr-first-sort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Lmrzzz-first-sort
-        
-      </div>
-    </a>
   
-  
-    <a href="/2024/06/27/Lmr-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/07/01/Lmr-first-konw-io/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Lmrzzz-first-blog</div>
+      <div class="article-nav-title">Lmrzzz-first-io</div>
     </a>
   
 </nav>

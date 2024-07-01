@@ -6,15 +6,15 @@
   
   <title>Lmrzzz-first-sort | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="排序算法：冒泡 选择 插入 快速排序困惑：思路：遇到的困难： 选择排序的j的初始值 快速排序的中间值收获:1返回数组的时候不需要返回值 因为是索引结构     2 快速排序是基于 分划的思想 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
+  <meta name="description" content="排序算法：冒泡 选择 插入 快速排序困惑:思路：遇到的困难： 选择排序的j的初始值 快速排序的中间值收获:1返回数组的时候不需要返回值 因为是索引结构     2 快速排序是基于 分划的思想 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lmrzzz-first-sort">
 <meta property="og:url" content="http://example.com/2024/06/28/Lmr-first-sort/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="排序算法：冒泡 选择 插入 快速排序困惑：思路：遇到的困难： 选择排序的j的初始值 快速排序的中间值收获:1返回数组的时候不需要返回值 因为是索引结构     2 快速排序是基于 分划的思想 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
+<meta property="og:description" content="排序算法：冒泡 选择 插入 快速排序困惑:思路：遇到的困难： 选择排序的j的初始值 快速排序的中间值收获:1返回数组的时候不需要返回值 因为是索引结构     2 快速排序是基于 分划的思想 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-28T13:18:14.000Z">
-<meta property="article:modified_time" content="2024-06-28T13:27:29.788Z">
+<meta property="article:modified_time" content="2024-07-01T10:20:16.380Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="基本算法">
 <meta property="article:tag" content="排序">
@@ -95,8 +95,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>排序算法：冒泡 选择 插入 快速排序<br>困惑：<br>思路：<br>遇到的困难： 选择排序的j的初始值 快速排序的中间值<br>收获:1返回数组的时候不需要返回值 因为是索引结构<br>     2 快速排序是基于 分划的思想</p>
+        <p>排序算法：冒泡 选择 插入 快速排序<br>困惑:<br>思路：<br>遇到的困难： 选择排序的j的初始值 快速排序的中间值<br>收获:1返回数组的时候不需要返回值 因为是索引结构<br>     2 快速排序是基于 分划的思想</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; ints.length; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[i] &gt; ints[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                    swap(ints, i, i + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Selection</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="comment">//选择排序 有最小的就往前面放</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">minIndex</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; ints.length - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[j] &lt; ints[minIndex]) &#123;</span><br><span class="line">                    minIndex = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(ints, minIndex, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Insertion</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="comment">//key要排列的元素</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">key</span> <span class="operator">=</span> ints[i];</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i - <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//j是要排遍历的起点</span></span><br><span class="line">            <span class="comment">//当前面的值大于key的时候 就是有序的最后一个比新添加的更大</span></span><br><span class="line">            <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; ints[j] &gt; key) &#123;</span><br><span class="line">                <span class="comment">//将倒数第二赋给最后一个 一直这样递归到第二个赋给第一个</span></span><br><span class="line">                ints[j + <span class="number">1</span>] = ints[j];</span><br><span class="line">                j = j - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ints[j + <span class="number">1</span>] = key;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//快速排序 划分治之的思想</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">QuickSort</span><span class="params">(<span class="type">int</span>[] ints,<span class="type">int</span> low,<span class="type">int</span> high)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (low&lt;high)&#123;</span><br><span class="line">            <span class="type">int</span> pivotIndex=partition(ints,low,high);</span><br><span class="line">            partition(ints,low,pivotIndex-<span class="number">1</span>);</span><br><span class="line">            partition(ints,pivotIndex+<span class="number">1</span>,high);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="type">int</span> pivot=arr[high];</span><br><span class="line">    <span class="type">int</span> i=(low-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">0</span>; i1 &lt; high; i1++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i1]&lt;pivot)&#123;</span><br><span class="line">                i1++;</span><br><span class="line">                <span class="type">int</span> temp=arr[i];</span><br><span class="line">                arr[i]=arr[i1];</span><br><span class="line">                arr[i]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> temp=arr[i+<span class="number">1</span>];</span><br><span class="line">        arr[i+<span class="number">1</span>]=arr[high];</span><br><span class="line">        arr[high]=temp;</span><br><span class="line">        <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -111,6 +112,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2024/07/01/Lmr-first-konw-io/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Lmrzzz-first-io
+        
+      </div>
+    </a>
   
   
     <a href="/2024/06/28/Lmr-first-memory/" id="article-nav-older" class="article-nav-link-wrap">
@@ -135,7 +145,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
     </div>
   </div>
 
@@ -145,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
+      <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;">事件监听</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 10px;">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
     </div>
   </div>
 
@@ -154,7 +164,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
     </div>
   </div>
 
@@ -167,6 +177,14 @@
       <ul>
         
           <li>
+            <a href="/2024/07/01/Lmr-first-know-listen/">Lmrzzz-first-swing</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/01/Lmr-first-konw-io/">Lmrzzz-first-io</a>
+          </li>
+        
+          <li>
             <a href="/2024/06/28/Lmr-first-sort/">Lmrzzz-first-sort</a>
           </li>
         
@@ -176,10 +194,6 @@
         
           <li>
             <a href="/2024/06/27/Lmr-first-blog/">Lmrzzz-first-blog</a>
-          </li>
-        
-          <li>
-            <a href="/2024/06/27/hello-world/">Hello World</a>
           </li>
         
       </ul>

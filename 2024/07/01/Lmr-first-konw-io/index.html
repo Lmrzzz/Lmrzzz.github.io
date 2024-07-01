@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Lmrzzz-first-io | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="困惑-&gt;1 什么是IO流？2 字符流和字节流的区别？3 基本数据类型是什么流?4 流的基本性质思路-&gt;逐一敲代码遇到的困难-&gt;混乱概念收获-&gt;初次面熟io1 io流就是Input流和Output流 说人话就是输入输出流,用于内存和存储设备(外部设备)的交换 2 字符流就是用来处理文本，就是txt的，经典的类有比如Write和Read,读和写更接近人类的习惯，字符也是。  字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lmrzzz-first-io">
+<meta property="og:url" content="http://example.com/2024/07/01/Lmr-first-konw-io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="困惑-&gt;1 什么是IO流？2 字符流和字节流的区别？3 基本数据类型是什么流?4 流的基本性质思路-&gt;逐一敲代码遇到的困难-&gt;混乱概念收获-&gt;初次面熟io1 io流就是Input流和Output流 说人话就是输入输出流,用于内存和存储设备(外部设备)的交换 2 字符流就是用来处理文本，就是txt的，经典的类有比如Write和Read,读和写更接近人类的习惯，字符也是。  字">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-01T11:30:15.000Z">
+<meta property="article:modified_time" content="2024-07-01T13:25:57.406Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="字符流">
+<meta property="article:tag" content="字节流">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Lmr-first-konw-io" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/01/Lmr-first-konw-io/" class="article-date">
+  <time class="dt-published" datetime="2024-07-01T11:30:15.000Z" itemprop="datePublished">2024-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Lmrzzz-first-io
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="困惑-1-什么是IO流？2-字符流和字节流的区别？3-基本数据类型是什么流-4-流的基本性质"><a href="#困惑-1-什么是IO流？2-字符流和字节流的区别？3-基本数据类型是什么流-4-流的基本性质" class="headerlink" title="困惑-&gt;1 什么是IO流？2 字符流和字节流的区别？3 基本数据类型是什么流?4 流的基本性质"></a>困惑-&gt;1 什么是IO流？2 字符流和字节流的区别？3 基本数据类型是什么流?4 流的基本性质</h2><h2 id="思路-逐一敲代码"><a href="#思路-逐一敲代码" class="headerlink" title="思路-&gt;逐一敲代码"></a>思路-&gt;逐一敲代码</h2><h2 id="遇到的困难-混乱概念"><a href="#遇到的困难-混乱概念" class="headerlink" title="遇到的困难-&gt;混乱概念"></a>遇到的困难-&gt;混乱概念</h2><h2 id="收获-初次面熟io"><a href="#收获-初次面熟io" class="headerlink" title="收获-&gt;初次面熟io"></a>收获-&gt;初次面熟io</h2><p>1 io流就是Input流和Output流 说人话就是输入输出流,用于内存和存储设备(外部设备)的交换</p>
+<p>2 字符流就是用来处理文本，就是txt的，经典的类有比如Write和Read,读和写更接近人类的习惯，字符也是。<br>  字节流就是都可以处理的,比如FileInputStream和FileOutputStream</p>
+<p>3 基本数据类型的输入输出流是字节流，可以读写字节和字符还可以读写基本数据类型</p>
+<p>4 有队列的基本性质 先进先出，还要满足文件的RO(只读)和WO(只写)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用字节流的两个类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IoDemo02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    outputStreamIo();</span><br><span class="line">        System.out.println(<span class="string">&quot;---------------------------------&quot;</span>);</span><br><span class="line">    inputeStreamIo();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">inputeStreamIo</span><span class="params">()</span>&#123;</span><br><span class="line">        FileInputStream inputStream=<span class="literal">null</span>;</span><br><span class="line">        InputStreamReader inputStreamReader=<span class="literal">null</span>;</span><br><span class="line">        BufferedReader bufferedReader=<span class="literal">null</span>;</span><br><span class="line">        String lolPath=<span class="string">&quot;C:\\Users\\90819\\Documents\\lol.txt&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            inputStream=<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(lolPath);</span><br><span class="line">            inputStreamReader=<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream);</span><br><span class="line">            bufferedReader=<span class="keyword">new</span> <span class="title class_">BufferedReader</span>(inputStreamReader);</span><br><span class="line">            String line;</span><br><span class="line">            <span class="keyword">while</span> ((line=bufferedReader.readLine())!=<span class="literal">null</span>)&#123;</span><br><span class="line">                System.out.println(line);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;文件没有找到&quot;</span>+e.getMessage());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取的时候错误&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (inputStream!=<span class="literal">null</span>)&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    inputStream.close();</span><br><span class="line">                &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;关闭任务的时候发生错误&quot;</span>+e.getMessage());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">outputStreamIo</span><span class="params">()</span>&#123;</span><br><span class="line">        String lolPath=<span class="string">&quot;C:\\Users\\90819\\Documents\\lol.txt&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileOutputStream fileOutputStream=<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(lolPath,<span class="literal">true</span>);</span><br><span class="line">            fileOutputStream.write(System.getProperty(<span class="string">&quot;line.separator&quot;</span>).getBytes());</span><br><span class="line">            fileOutputStream.write(<span class="string">&quot;陈某杰 6月29日 八点说上号一直托到九点&quot;</span>.getBytes());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage()+<span class="string">&quot;没找到文件阿牢底！&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;输入信息的时候有错误&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是字符流的写</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String path=<span class="string">&quot;C:\\Linshi\\read.txt&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileWriter fileWriter=<span class="keyword">new</span> <span class="title class_">FileWriter</span>(path);</span><br><span class="line">           <span class="comment">/* char[] chars=&#123;&#x27;s&#x27;,&#x27;s&#x27;,&#x27;s&#x27;,&#x27;w&#x27;,&#x27;x&#x27;&#125;;</span></span><br><span class="line"><span class="comment">            fileWriter.write(chars,0,chars.length);*/</span></span><br><span class="line">            <span class="type">char</span>[] chars=<span class="string">&quot;我直接展示String转换成chars数组&quot;</span>.toCharArray();</span><br><span class="line">            fileWriter.write(chars,<span class="number">0</span>,chars.length);</span><br><span class="line">            fileWriter.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取文件的时候出错&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//这是字符流的读</span></span><br><span class="line"><span class="keyword">package</span> Day18.lmrio.firstkonwit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FileReaderDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String path=<span class="string">&quot;C:\\Linshi\\read.txt&quot;</span>;</span><br><span class="line">        <span class="type">int</span> b=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileReader fileReader=<span class="keyword">new</span> <span class="title class_">FileReader</span>(path);</span><br><span class="line">            <span class="keyword">while</span> ((b=fileReader.read())!=-<span class="number">1</span>)&#123;</span><br><span class="line">                System.out.println((<span class="type">char</span>) b);</span><br><span class="line">            &#125;</span><br><span class="line">            fileReader.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage()+<span class="string">&quot;你没有找到你的文件牢底&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage()+<span class="string">&quot;读取的时候出问题&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是利用byte,short,int的长度来控制读字符</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DataInputDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String pat=<span class="string">&quot;C:\\Linshi\\datacontract.txt&quot;</span>;</span><br><span class="line">        <span class="comment">//data的实现要通过fileInput</span></span><br><span class="line">        FileInputStream fileInputStream= <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fileInputStream = <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(pat);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">        &#125;</span><br><span class="line">        DataInputStream dataInputStream=<span class="keyword">new</span> <span class="title class_">DataInputStream</span>(fileInputStream);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">byte</span> i=dataInputStream.readByte();</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取第一个的时候粗错&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/01/Lmr-first-konw-io/" data-id="cly30kt3b00010ov0dcrdf4im" data-title="Lmrzzz-first-io" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/07/01/Lmr-first-know-listen/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Lmrzzz-first-swing
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/06/28/Lmr-first-sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Lmrzzz-first-sort</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;">事件监听</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 10px;">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/07/01/Lmr-first-know-listen/">Lmrzzz-first-swing</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/01/Lmr-first-konw-io/">Lmrzzz-first-io</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/28/Lmr-first-sort/">Lmrzzz-first-sort</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/28/Lmr-first-memory/">Lmrzzz-first-memory</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/27/Lmr-first-blog/">Lmrzzz-first-blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
