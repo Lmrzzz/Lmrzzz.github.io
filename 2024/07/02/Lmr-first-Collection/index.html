@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Lmrzzz-first-Collection | Hexo</title>
+  <title>Lmrzzz-first-Collection-list | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="困惑-&gt;Collection下那么多子类,该如何使用?他们的性质如何？思路-&gt; 先学list在学set,最后看list的底层原理遇到的困难-&gt;Hashset中存储实例的时候，存入数值相同的实例，发现重复的元素也会存到hashset中收获-&gt;性质以及定义;还有熟悉额外的打印输出利用stream流;学会在类中重写equal和hashcode这样在存入数据的时候可以保留hashc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lmrzzz-first-Collection">
+<meta property="og:title" content="Lmrzzz-first-Collection-list">
 <meta property="og:url" content="http://example.com/2024/07/02/Lmr-first-Collection/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="困惑-&gt;Collection下那么多子类,该如何使用?他们的性质如何？思路-&gt; 先学list在学set,最后看list的底层原理遇到的困难-&gt;Hashset中存储实例的时候，存入数值相同的实例，发现重复的元素也会存到hashset中收获-&gt;性质以及定义;还有熟悉额外的打印输出利用stream流;学会在类中重写equal和hashcode这样在存入数据的时候可以保留hashc">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-02T03:12:00.000Z">
-<meta property="article:modified_time" content="2024-07-02T07:18:24.206Z">
+<meta property="article:modified_time" content="2024-07-02T13:38:15.047Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="List">
 <meta property="article:tag" content="Set">
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Lmrzzz-first-Collection
+      Lmrzzz-first-Collection-list
     </h1>
   
 
@@ -100,7 +100,7 @@
 <h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>原理：<br>基于动态数组实现<br>支持快速随机访问和修改元素</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">arraylistCharater</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//List都有的有序 可重复 有索引</span></span><br><span class="line">        ArrayList arrayList=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(Arrays.asList(<span class="string">&quot;qwer&quot;</span>,<span class="string">&quot;EQWE&quot;</span>,<span class="string">&quot;SAD&quot;</span>,<span class="string">&quot;ASD&quot;</span>,<span class="string">&quot;WQ&quot;</span>));</span><br><span class="line">        arrayList.add(<span class="string">&quot;xixi&quot;</span>);</span><br><span class="line">        <span class="comment">//这个就是可重复</span></span><br><span class="line">        arrayList.add(<span class="string">&quot;xixi&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这个就是有序</span></span><br><span class="line">        System.out.println(arrayList.stream().toList());</span><br><span class="line">        arrayList.set(<span class="number">1</span>,<span class="string">&quot;在第一个地方加我&quot;</span>);</span><br><span class="line">        System.out.println(arrayList.stream().toList());</span><br><span class="line">        <span class="comment">//这个就叫有索引</span></span><br><span class="line">        System.out.println(arrayList.get(<span class="number">3</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>原理：<br>基于双向链表实现<br>支持高效的插入和删除操作，但访问元素需要遍历链表</p>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>原理：<br>基于双向链表实现,根据进入的顺序排序<br>支持高效的插入和删除操作，但访问元素需要遍历链表</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">LinkedHashSetCharater</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//有序(按照插入的顺序) 不重复 无索引</span></span><br><span class="line">        LinkedHashSet linkedHashSet=<span class="keyword">new</span> <span class="title class_">LinkedHashSet</span>&lt;&gt;(Arrays.asList(<span class="string">&quot;S&quot;</span>,<span class="string">&quot;X&quot;</span>,<span class="string">&quot;E&quot;</span>,<span class="string">&quot;1&quot;</span>,<span class="string">&quot;8&quot;</span>,<span class="string">&quot;Z&quot;</span>));</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;我第一个加入&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;wlgsg&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;wlgsg&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;我最后加入！&quot;</span>);</span><br><span class="line">        linkedHashSet.stream().forEach((x)-&gt; System.out.print(x+<span class="string">&quot;\t&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>特性：<br>无序（元素没有特定顺序）<br>不可重复（不允许包含重复的元素）<br>无索引（不能通过索引访问元素）</p>
@@ -125,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/02/Lmr-first-Collection/" data-id="cly42wz7w0000f8v04vq51qpo" data-title="Lmrzzz-first-Collection" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/07/02/Lmr-first-Collection/" data-id="cly42wz7w0000f8v04vq51qpo" data-title="Lmrzzz-first-Collection-list" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -136,6 +136,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2024/07/02/lmr-second-landord/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Lmrzzz-second-TreeSet
+        
+      </div>
+    </a>
   
   
     <a href="/2024/07/01/Lmr-first-know-listen/" id="article-nav-older" class="article-nav-link-wrap">
@@ -160,7 +169,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/List/" rel="tag">List</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Set/" rel="tag">Set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparator/" rel="tag">Comparator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap-TreeMap-LinkMap/" rel="tag">HashMap,TreeMap,LinkMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/List/" rel="tag">List</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Set/" rel="tag">Set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TreeSetConstructor/" rel="tag">TreeSetConstructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
     </div>
   </div>
 
@@ -170,7 +179,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/List/" style="font-size: 10px;">List</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;">事件监听</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 10px;">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
+      <a href="/tags/Comparator/" style="font-size: 10px;">Comparator</a> <a href="/tags/HashMap-TreeMap-LinkMap/" style="font-size: 10px;">HashMap,TreeMap,LinkMap</a> <a href="/tags/List/" style="font-size: 10px;">List</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/TreeSetConstructor/" style="font-size: 10px;">TreeSetConstructor</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;">事件监听</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 10px;">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
     </div>
   </div>
 
@@ -192,7 +201,15 @@
       <ul>
         
           <li>
-            <a href="/2024/07/02/Lmr-first-Collection/">Lmrzzz-first-Collection</a>
+            <a href="/2024/07/02/Lmr-first-Collection-Map/">Lmrzzz-first-Collection-set</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/02/lmr-second-landord/">Lmrzzz-second-TreeSet</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/02/Lmr-first-Collection/">Lmrzzz-first-Collection-list</a>
           </li>
         
           <li>
@@ -201,14 +218,6 @@
         
           <li>
             <a href="/2024/07/01/Lmr-first-konw-io/">Lmrzzz-first-io</a>
-          </li>
-        
-          <li>
-            <a href="/2024/06/28/Lmr-first-sort/">Lmrzzz-first-sort</a>
-          </li>
-        
-          <li>
-            <a href="/2024/06/28/Lmr-first-memory/">Lmrzzz-first-memory</a>
           </li>
         
       </ul>
