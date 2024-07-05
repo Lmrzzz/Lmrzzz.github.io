@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Lmrzzz-first-mutiThead | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="困惑-&gt;1线程的创建 2如何保证线程的安全? 3线程池子 的创建和常用API思路-&gt;遇到的困难-&gt;如何将一个对象存到两个线程里面去？在线程中如何获取线程的名字？收获-&gt;有三种创建线程的方式，而且特别适合练习Lambda表达式,先看看最后一种Callable 唯一一个可以设置返回值的1234567891011121314151617class CallableTest imp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lmrzzz-first-mutiThead">
+<meta property="og:url" content="http://example.com/2024/07/05/Lmr-first-mutiThead/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="困惑-&gt;1线程的创建 2如何保证线程的安全? 3线程池子 的创建和常用API思路-&gt;遇到的困难-&gt;如何将一个对象存到两个线程里面去？在线程中如何获取线程的名字？收获-&gt;有三种创建线程的方式，而且特别适合练习Lambda表达式,先看看最后一种Callable 唯一一个可以设置返回值的1234567891011121314151617class CallableTest imp">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-07-05T13:30:14.000Z">
+<meta property="article:modified_time" content="2024-07-05T07:41:49.935Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="MutiThead">
+<meta property="article:tag" content="Callable">
+<meta property="article:tag" content="Runable">
+<meta property="article:tag" content="Thead">
+<meta property="article:tag" content="Lambda">
+<meta property="article:tag" content="TheadPool">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Lmr-first-mutiThead" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/05/Lmr-first-mutiThead/" class="article-date">
+  <time class="dt-published" datetime="2024-07-05T13:30:14.000Z" itemprop="datePublished">2024-07-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Lmrzzz-first-mutiThead
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="困惑-1线程的创建-2如何保证线程的安全-3线程池子-的创建和常用API"><a href="#困惑-1线程的创建-2如何保证线程的安全-3线程池子-的创建和常用API" class="headerlink" title="困惑-&gt;1线程的创建 2如何保证线程的安全? 3线程池子 的创建和常用API"></a>困惑-&gt;1线程的创建 2如何保证线程的安全? 3线程池子 的创建和常用API</h2><h2 id="思路"><a href="#思路" class="headerlink" title="思路-&gt;"></a>思路-&gt;</h2><h2 id="遇到的困难-如何将一个对象存到两个线程里面去？在线程中如何获取线程的名字？"><a href="#遇到的困难-如何将一个对象存到两个线程里面去？在线程中如何获取线程的名字？" class="headerlink" title="遇到的困难-&gt;如何将一个对象存到两个线程里面去？在线程中如何获取线程的名字？"></a>遇到的困难-&gt;如何将一个对象存到两个线程里面去？在线程中如何获取线程的名字？</h2><h2 id="收获"><a href="#收获" class="headerlink" title="收获-&gt;"></a>收获-&gt;</h2><h3 id="有三种创建线程的方式，而且特别适合练习Lambda表达式-先看看最后一种Callable-唯一一个可以设置返回值的"><a href="#有三种创建线程的方式，而且特别适合练习Lambda表达式-先看看最后一种Callable-唯一一个可以设置返回值的" class="headerlink" title="有三种创建线程的方式，而且特别适合练习Lambda表达式,先看看最后一种Callable 唯一一个可以设置返回值的"></a>有三种创建线程的方式，而且特别适合练习Lambda表达式,先看看最后一种Callable 唯一一个可以设置返回值的</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CallableTest</span> <span class="keyword">implements</span> <span class="title class_">Callable</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Object <span class="title function_">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">6</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">knowCallable</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;</span><br><span class="line">        CallableTest callableTest=<span class="keyword">new</span> <span class="title class_">CallableTest</span>();</span><br><span class="line">        FutureTask futureTask=<span class="keyword">new</span> <span class="title class_">FutureTask</span>&lt;&gt;(callableTest);</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(futureTask).start();</span><br><span class="line">        <span class="type">int</span> x= (<span class="type">int</span>) futureTask.get();</span><br><span class="line">        System.out.println(x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="这个是Runable-非常适合来练习Lambda-X"><a href="#这个是Runable-非常适合来练习Lambda-X" class="headerlink" title="这个是Runable 非常适合来练习Lambda  X"></a>这个是Runable 非常适合来练习Lambda  X</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">RunableDemo01 runableDemo01=<span class="keyword">new</span> <span class="title class_">RunableDemo01</span>();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(runableDemo01).start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;<span class="number">3</span> ; i++) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;主线程！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//shou首先干掉两个类那我如何简化呢？</span></span><br><span class="line">        Runnable runnable=<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;执行线程&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(runnable).start();;</span><br><span class="line">        <span class="comment">//接下来我要展示我的匿名</span></span><br><span class="line">        Runnable runnable1=()-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;展示lambda的&quot;</span>);</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//那么将Thread提前呢?</span></span><br><span class="line">        <span class="type">Thread</span> <span class="variable">thread</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Thread</span>(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                System.out.println(<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        thread.run();</span><br><span class="line">        <span class="comment">//然后使用lambda</span></span><br><span class="line">        Thread thread1=<span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;普通的lambda&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        thread1.start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;注意我的lambda&quot;</span>);</span><br><span class="line">        &#125;).start();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="这个是thead-，别忘了所有的线程要用start来启动"><a href="#这个是thead-，别忘了所有的线程要用start来启动" class="headerlink" title="这个是thead ，别忘了所有的线程要用start来启动"></a>这个是thead ，别忘了所有的线程要用start来启动</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="number">1</span>);</span><br><span class="line">        &#125;).start();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="两种办法-第一种叫做synchronized"><a href="#两种办法-第一种叫做synchronized" class="headerlink" title="两种办法 第一种叫做synchronized"></a>两种办法 第一种叫做synchronized</h3><h4 id="困难解决1：直接利用新建一个类名字是TheadDreaw-构造函数设置为String-和-account，在新建TheadDraw的时候存入就行"><a href="#困难解决1：直接利用新建一个类名字是TheadDreaw-构造函数设置为String-和-account，在新建TheadDraw的时候存入就行" class="headerlink" title="困难解决1：直接利用新建一个类名字是TheadDreaw 构造函数设置为String 和 account，在新建TheadDraw的时候存入就行"></a>困难解决1：直接利用新建一个类名字是TheadDreaw 构造函数设置为String 和 account，在新建TheadDraw的时候存入就行</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Account account=<span class="keyword">new</span> <span class="title class_">Account</span>(<span class="number">500</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;线程执行钱&quot;</span>+account.getMoney());</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">TheadDraw</span>(<span class="string">&quot;sad&quot;</span>,account).start();</span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">TheadDraw</span>(<span class="string">&quot;WANG&quot;</span>,account).start();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TheadDraw</span> <span class="keyword">extends</span> <span class="title class_">Thread</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Account account;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">TheadDraw</span><span class="params">(String name,Account account)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(name);</span><br><span class="line">        <span class="built_in">this</span>.account=account;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">      account.drawMoney(<span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这一段在实体类中的</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">drawMoney</span><span class="params">(<span class="type">double</span> money)</span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="built_in">this</span>)&#123;</span><br><span class="line">            String name=Thread.currentThread().getName();</span><br><span class="line">            System.out.println(name +<span class="string">&quot;余额&quot;</span>+<span class="built_in">this</span>.getMoney());</span><br><span class="line">            <span class="type">double</span> acc=<span class="built_in">this</span>.getMoney()-money;</span><br><span class="line">            System.out.println(<span class="string">&quot;取出后剩余&quot;</span>+acc);</span><br><span class="line">            <span class="built_in">this</span>.setMoney(acc);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="两种办法-第二种叫做Lock在实体类的方法中上锁"><a href="#两种办法-第二种叫做Lock在实体类的方法中上锁" class="headerlink" title="两种办法 第二种叫做Lock在实体类的方法中上锁"></a>两种办法 第二种叫做Lock在实体类的方法中上锁</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Lock lock;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        lock = <span class="keyword">new</span> <span class="title class_">ReentrantLock</span>();</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">drawMoney</span><span class="params">(<span class="type">double</span> money)</span>&#123;</span><br><span class="line">       lock.lock();</span><br><span class="line">           String name=Thread.currentThread().getName();</span><br><span class="line">           System.out.println(name +<span class="string">&quot;余额&quot;</span>+<span class="built_in">this</span>.getMoney());</span><br><span class="line">           <span class="type">double</span> acc=<span class="built_in">this</span>.getMoney()-money;</span><br><span class="line">           System.out.println(<span class="string">&quot;取出后剩余&quot;</span>+acc);</span><br><span class="line">           <span class="built_in">this</span>.setMoney(acc);</span><br><span class="line">       lock.unlock();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="解决困难2-想要在实体类中实现获取线程的名字可以使用-Thead的currentThead"><a href="#解决困难2-想要在实体类中实现获取线程的名字可以使用-Thead的currentThead" class="headerlink" title="解决困难2:想要在实体类中实现获取线程的名字可以使用 Thead的currentThead"></a>解决困难2:想要在实体类中实现获取线程的名字可以使用 Thead的currentThead</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">drawMoney</span><span class="params">(<span class="type">double</span> money)</span>&#123;</span><br><span class="line">        String name=Thread.currentThread().getName();</span><br><span class="line">        <span class="type">double</span> acc=<span class="built_in">this</span>.getMoney();</span><br><span class="line">        <span class="type">double</span> now=<span class="built_in">this</span>.getMoney()-money;</span><br><span class="line">        <span class="built_in">this</span>.setMoney(now);</span><br><span class="line">        System.out.println(<span class="keyword">new</span> <span class="title class_">StringBuilder</span>()</span><br><span class="line">                .append(name).append(<span class="string">&quot;开始取钱\n原来余额&quot;</span>).append(acc)</span><br><span class="line">                .append(<span class="string">&quot;取出&quot;</span>).append(money)</span><br><span class="line">                .append(<span class="string">&quot;\n&quot;</span>).append(<span class="string">&quot;还剩下&quot;</span>).append(now));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="下面是线程池-直接new-一个接口ExecutorService然后用实现类TheadpoolExecutor来实现-注意一个sumbmit方法返回的是Future类，用于接收返回值。还有execute方法的作用"><a href="#下面是线程池-直接new-一个接口ExecutorService然后用实现类TheadpoolExecutor来实现-注意一个sumbmit方法返回的是Future类，用于接收返回值。还有execute方法的作用" class="headerlink" title="下面是线程池 直接new 一个接口ExecutorService然后用实现类TheadpoolExecutor来实现,注意一个sumbmit方法返回的是Future类，用于接收返回值。还有execute方法的作用"></a>下面是线程池 直接new 一个接口ExecutorService然后用实现类TheadpoolExecutor来实现,注意一个sumbmit方法返回的是Future类，用于接收返回值。还有execute方法的作用</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TheadPool</span> &#123;</span><br><span class="line">    <span class="comment">//用TheadPoolExecutor来实现一个ExecutorService接口 来</span></span><br><span class="line">    <span class="keyword">static</span> ExecutorService executorService=<span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>(</span><br><span class="line">            <span class="number">5</span>,</span><br><span class="line">            <span class="number">8</span>,</span><br><span class="line">            <span class="number">1000</span>,</span><br><span class="line">            TimeUnit.SECONDS,</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">ArrayBlockingQueue</span>&lt;&gt;(<span class="number">4</span>),</span><br><span class="line">            Executors.defaultThreadFactory(),</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.CallerRunsPolicy()</span><br><span class="line">            );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException &#123;</span><br><span class="line">        Runnable runnable=<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;qWQ&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        Runnable runnable1=<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;rrr&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        Thread thread=<span class="keyword">new</span> <span class="title class_">Thread</span>(()-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;只留下thead名字的lambda&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        executorService.execute(thread);</span><br><span class="line">        <span class="comment">//让我想想有什么可以线程返回对象</span></span><br><span class="line">        CallableTest callableTest=<span class="keyword">new</span> <span class="title class_">CallableTest</span>();</span><br><span class="line">        Future&lt;?&gt; future=executorService.submit(callableTest);</span><br><span class="line">        <span class="comment">//submit返回一个future的对象 这个时候要调用get函数才能得到返回值</span></span><br><span class="line">        System.out.println(future.get());</span><br><span class="line"></span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/05/Lmr-first-mutiThead/" data-id="cly8gxfll000gp0v0hyztcb44" data-title="Lmrzzz-first-mutiThead" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Callable/" rel="tag">Callable</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MutiThead/" rel="tag">MutiThead</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Runable/" rel="tag">Runable</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Thead/" rel="tag">Thead</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheadPool/" rel="tag">TheadPool</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2024/07/04/MyPlaste/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Lmrzzz-first-</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BufferInputStream/" rel="tag">BufferInputStream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Callable/" rel="tag">Callable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparator/" rel="tag">Comparator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Copy/" rel="tag">Copy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Document/" rel="tag">Document</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/" rel="tag">Element</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap-TreeMap-LinkMap/" rel="tag">HashMap,TreeMap,LinkMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/List/" rel="tag">List</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MutiThead/" rel="tag">MutiThead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Read-properties/" rel="tag">Read-&gt;properties</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Read-xml/" rel="tag">Read-&gt;xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reader-BufferReader/" rel="tag">Reader,BufferReader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Runable/" rel="tag">Runable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Set/" rel="tag">Set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stream/" rel="tag">Stream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thead/" rel="tag">Thead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheadPool/" rel="tag">TheadPool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TreeSetConstructor/" rel="tag">TreeSetConstructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Writer-BufferWriter/" rel="tag">Writer,BufferWriter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concat/" rel="tag">concat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logback/" rel="tag">logback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logout/" rel="tag">logout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mapToObj/" rel="tag">mapToObj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" rel="tag">两种方式复制MP4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BufferInputStream/" style="font-size: 10px;">BufferInputStream</a> <a href="/tags/Callable/" style="font-size: 10px;">Callable</a> <a href="/tags/Comparator/" style="font-size: 10px;">Comparator</a> <a href="/tags/Copy/" style="font-size: 10px;">Copy</a> <a href="/tags/Document/" style="font-size: 10px;">Document</a> <a href="/tags/Element/" style="font-size: 10px;">Element</a> <a href="/tags/HashMap-TreeMap-LinkMap/" style="font-size: 10px;">HashMap,TreeMap,LinkMap</a> <a href="/tags/Lambda/" style="font-size: 10px;">Lambda</a> <a href="/tags/List/" style="font-size: 10px;">List</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/MutiThead/" style="font-size: 10px;">MutiThead</a> <a href="/tags/Read-properties/" style="font-size: 10px;">Read->properties</a> <a href="/tags/Read-xml/" style="font-size: 10px;">Read->xml</a> <a href="/tags/Reader-BufferReader/" style="font-size: 10px;">Reader,BufferReader</a> <a href="/tags/Runable/" style="font-size: 10px;">Runable</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Thead/" style="font-size: 10px;">Thead</a> <a href="/tags/TheadPool/" style="font-size: 10px;">TheadPool</a> <a href="/tags/TreeSetConstructor/" style="font-size: 10px;">TreeSetConstructor</a> <a href="/tags/Writer-BufferWriter/" style="font-size: 10px;">Writer,BufferWriter</a> <a href="/tags/concat/" style="font-size: 10px;">concat</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/logback/" style="font-size: 10px;">logback</a> <a href="/tags/logout/" style="font-size: 10px;">logout</a> <a href="/tags/mapToObj/" style="font-size: 10px;">mapToObj</a> <a href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" style="font-size: 10px;">两种方式复制MP4</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;">事件监听</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 20px;">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/07/05/Lmr-first-mutiThead/">Lmrzzz-first-mutiThead</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/04/MyPlaste/">Lmrzzz-first-</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/04/Lmr-first-logout/">Lmrzzz-first-logout</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/04/Lmr-first-xml/">Lmrzzz-first-xml</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/04/Lmr-first-io-copybyte/">Lmr-first-io-copybyte.md</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
