@@ -1,641 +1,513 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="John Doe">
+  
+
+  
+
+  
+
+  <title>奇怪的Lmr</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
   
   
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
-
+</head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container">
+  
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          奇怪的Lmr
+        
+      </a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Lmr-first-io-copybyte" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/04/Lmr-first-io-copybyte/" class="article-date">
-  <time class="dt-published" datetime="2024-07-04T04:30:15.000Z" itemprop="datePublished">2024-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <ul class="navbar-list">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/04/Lmr-first-io-copybyte/">Lmr-first-io-copybyte.md</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑-如何使用buf"><a href="#困惑-如何使用buf" class="headerlink" title="困惑-&gt;如何使用buf"></a>困惑-&gt;如何使用buf</h2><h2 id="思路-在使用了buf后-要设置一个缓冲区的大小然后再调用api"><a href="#思路-在使用了buf后-要设置一个缓冲区的大小然后再调用api" class="headerlink" title="思路-&gt;在使用了buf后 要设置一个缓冲区的大小然后再调用api"></a>思路-&gt;在使用了buf后 要设置一个缓冲区的大小然后再调用api</h2><h2 id="遇到的困难-多次执行发现复制失败，没有发现为什么"><a href="#遇到的困难-多次执行发现复制失败，没有发现为什么" class="headerlink" title="遇到的困难-&gt;多次执行发现复制失败，没有发现为什么"></a>遇到的困难-&gt;多次执行发现复制失败，没有发现为什么</h2><h2 id="收获-1-用完了buf和intput后-一定要记得close掉-不然非常容易出错-2-BufInput的read-api-会将buf的元素放到第一个位置的byte-，并且返回大小"><a href="#收获-1-用完了buf和intput后-一定要记得close掉-不然非常容易出错-2-BufInput的read-api-会将buf的元素放到第一个位置的byte-，并且返回大小" class="headerlink" title="收获-&gt;1 用完了buf和intput后 一定要记得close掉 不然非常容易出错 2 BufInput的read api 会将buf的元素放到第一个位置的byte[]，并且返回大小"></a>收获-&gt;1 用完了buf和intput后 一定要记得close掉 不然非常容易出错 2 BufInput的read api 会将buf的元素放到第一个位置的byte[]，并且返回大小</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CompateTheir</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> String path1=<span class="string">&quot;D:\\wl\\beichai.mp4&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> String path2=<span class="string">&quot;D:\\wl\\copyout.mp4&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> String path3=<span class="string">&quot;D:\\wl\\copyoutBuffer.mp4&quot;</span>;</span><br><span class="line">    <span class="keyword">static</span> File fileIn=<span class="keyword">new</span> <span class="title class_">File</span>(path1);</span><br><span class="line">    <span class="keyword">static</span> File fileOut=<span class="keyword">new</span> <span class="title class_">File</span>(path2);</span><br><span class="line">    <span class="keyword">static</span> File fileOutBuffer=<span class="keyword">new</span> <span class="title class_">File</span>(path3);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">originalOneByte</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//将文件的int类型读取到数组中</span></span><br><span class="line">        FileInputStream fileInputStream=<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(fileIn);</span><br><span class="line">        <span class="type">int</span> fileInLength= (<span class="type">int</span>) fileIn.length();</span><br><span class="line">        <span class="type">int</span>[] intFile=<span class="keyword">new</span> <span class="title class_">int</span>[fileInLength];</span><br><span class="line">        <span class="type">int</span> readBack;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; fileInLength; i++) &#123;</span><br><span class="line">            readBack=fileInputStream.read();</span><br><span class="line">            <span class="keyword">if</span> (readBack==-<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            intFile[i]=readBack;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//接下来进行复制</span></span><br><span class="line">        FileOutputStream fileOutputStream=<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(fileOut);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; fileInLength; i++) &#123;</span><br><span class="line">            <span class="type">byte</span> c=(<span class="type">byte</span>)intFile[i];</span><br><span class="line">            fileOutputStream.write(c);</span><br><span class="line">        &#125;</span><br><span class="line">        fileInputStream.close();</span><br><span class="line">        fileOutputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">bufferBytesCopy</span><span class="params">()</span> <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">        BufferedInputStream bufferedInputStream=<span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(fileIn));</span><br><span class="line">        BufferedOutputStream bufferedOutputStream=<span class="keyword">new</span> <span class="title class_">BufferedOutputStream</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(fileOutBuffer));</span><br><span class="line">        <span class="type">byte</span>[] buffer=<span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">10240</span>];</span><br><span class="line">        <span class="type">int</span> readInput;</span><br><span class="line">        <span class="keyword">while</span> ((readInput=bufferedInputStream.read(buffer))!=-<span class="number">1</span>)&#123;</span><br><span class="line">            bufferedOutputStream.write(buffer,<span class="number">0</span>,readInput);</span><br><span class="line">        &#125;</span><br><span class="line">        bufferedOutputStream.close();</span><br><span class="line">        bufferedInputStream.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="注意-当调用originalOneByte的时候，并不是执行了就结束了，系统还在一直慢慢的复制"><a href="#注意-当调用originalOneByte的时候，并不是执行了就结束了，系统还在一直慢慢的复制" class="headerlink" title="注意!!当调用originalOneByte的时候，并不是执行了就结束了，系统还在一直慢慢的复制"></a>注意!!当调用originalOneByte的时候，并不是执行了就结束了，系统还在一直慢慢的复制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;开始&quot;</span>);</span><br><span class="line">    bufferBytesCopy();</span><br><span class="line">    System.out.println(<span class="string">&quot;快的结束&quot;</span>);</span><br><span class="line">    originalOneByte();</span><br><span class="line">    System.out.println(<span class="string">&quot;普通的结束&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>今天就学到day09 ppt的42页 后面的有时间再补充，我先转战day10</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/04/Lmr-first-io-copybyte/" data-id="clyplstcc0008igv01tbz09ex" data-title="Lmr-first-io-copybyte.md" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BufferInputStream/" rel="tag">BufferInputStream</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" rel="tag">两种方式复制MP4</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-fitst-io-charater" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/04/Lmr-fitst-io-charater/" class="article-date">
-  <time class="dt-published" datetime="2024-07-04T00:40:14.000Z" itemprop="datePublished">2024-07-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          <li class="navbar-list-item"><a href="/">首页</a></li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/04/Lmr-fitst-io-charater/">Lmrzzz-first-io-charater</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑"><a href="#困惑" class="headerlink" title="困惑-&gt;"></a>困惑-&gt;</h2><h3 id="1-复制文件案例为何总是复制不进去？"><a href="#1-复制文件案例为何总是复制不进去？" class="headerlink" title="1-&gt;复制文件案例为何总是复制不进去？"></a>1-&gt;复制文件案例为何总是复制不进去？</h3><h3 id="2-在Stream流中如何书写-Compare来让它以首字符来比较"><a href="#2-在Stream流中如何书写-Compare来让它以首字符来比较" class="headerlink" title="2-&gt;在Stream流中如何书写 Compare来让它以首字符来比较"></a>2-&gt;在Stream流中如何书写 Compare来让它以首字符来比较</h3><h2 id="思路"><a href="#思路" class="headerlink" title="思路-&gt;"></a>思路-&gt;</h2><h2 id="遇到的困难-写入不进去"><a href="#遇到的困难-写入不进去" class="headerlink" title="遇到的困难-&gt;写入不进去"></a>遇到的困难-&gt;写入不进去</h2><h2 id="收获-写入文件没有成功的问题可能与缓冲区没有及时刷新有关。在使用-BufferedWriter-写入文件时，数据首先被写入到缓冲区中，并不会立即写入文件。为了确保数据被写入文件，你需要调用-flush-方法或者在写入完成后关闭-BufferedWriter"><a href="#收获-写入文件没有成功的问题可能与缓冲区没有及时刷新有关。在使用-BufferedWriter-写入文件时，数据首先被写入到缓冲区中，并不会立即写入文件。为了确保数据被写入文件，你需要调用-flush-方法或者在写入完成后关闭-BufferedWriter" class="headerlink" title="收获-&gt;写入文件没有成功的问题可能与缓冲区没有及时刷新有关。在使用 BufferedWriter 写入文件时，数据首先被写入到缓冲区中，并不会立即写入文件。为了确保数据被写入文件，你需要调用 flush() 方法或者在写入完成后关闭 BufferedWriter"></a>收获-&gt;写入文件没有成功的问题可能与缓冲区没有及时刷新有关。在使用 BufferedWriter 写入文件时，数据首先被写入到缓冲区中，并不会立即写入文件。为了确保数据被写入文件，你需要调用 flush() 方法或者在写入完成后关闭 BufferedWriter</h2><h3 id="其中复制文件的案例如下"><a href="#其中复制文件的案例如下" class="headerlink" title="其中复制文件的案例如下"></a>其中复制文件的案例如下</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        String pathIn=<span class="string">&quot;D:\\wl\\IwantCopyIn.txt&quot;</span>;</span><br><span class="line">        String pathOut=<span class="string">&quot;D:\\wl\\IwantCopyout.txt&quot;</span>;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; listIn=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        File fileIn=<span class="keyword">new</span> <span class="title class_">File</span>(pathIn);</span><br><span class="line">        File fileOut=<span class="keyword">new</span> <span class="title class_">File</span>(pathOut);</span><br><span class="line"></span><br><span class="line">        FileReader fileReaderIn=<span class="keyword">new</span> <span class="title class_">FileReader</span>(fileIn);</span><br><span class="line">        BufferedReader bufferedReader=<span class="keyword">new</span> <span class="title class_">BufferedReader</span>(fileReaderIn);</span><br><span class="line">        String stringIn;</span><br><span class="line">        <span class="keyword">while</span> ((stringIn=bufferedReader.readLine())!=<span class="literal">null</span>)&#123;</span><br><span class="line">            listIn.add(stringIn);</span><br><span class="line">        &#125;</span><br><span class="line">        listIn.stream().forEach(x-&gt; System.out.println(x));</span><br><span class="line">        listIn=listIn.stream().sorted(Comparator.comparing(x-&gt;x.charAt(<span class="number">0</span>))).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">        FileWriter fileWriter=<span class="keyword">new</span> <span class="title class_">FileWriter</span>(fileOut,<span class="literal">true</span>);</span><br><span class="line">        BufferedWriter bufferedWriter=<span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(fileWriter);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; listIn.size(); i++) &#123;</span><br><span class="line">            String mid=listIn.get(i);</span><br><span class="line">            bufferedWriter.write(mid);</span><br><span class="line">            bufferedWriter.newLine();</span><br><span class="line">        &#125;</span><br><span class="line">        bufferedWriter.flush();</span><br><span class="line">        System.out.println(<span class="string">&quot;美丽的分割线&quot;</span>);</span><br><span class="line"></span><br><span class="line">        BufferedReader bufferedReader1=<span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(fileOut));</span><br><span class="line">        String stringOut;</span><br><span class="line">        <span class="keyword">while</span> ((stringOut=bufferedReader1.readLine())!=<span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(stringOut);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/04/Lmr-fitst-io-charater/" data-id="clyplstci000tigv0e3k3cvxz" data-title="Lmrzzz-first-io-charater" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Copy/" rel="tag">Copy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Reader-BufferReader/" rel="tag">Reader,BufferReader</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Writer-BufferWriter/" rel="tag">Writer,BufferWriter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-first-Stream" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/03/Lmr-first-Stream/" class="article-date">
-  <time class="dt-published" datetime="2024-07-03T09:40:14.000Z" itemprop="datePublished">2024-07-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/03/Lmr-first-Stream/">Lmrzzz-First-Stream</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑"><a href="#困惑" class="headerlink" title="困惑-&gt;"></a>困惑-&gt;</h2><h3 id="1-揭开Stream的面纱-生成，调用等等"><a href="#1-揭开Stream的面纱-生成，调用等等" class="headerlink" title="1-&gt;揭开Stream的面纱,生成，调用等等"></a>1-&gt;揭开Stream的面纱,生成，调用等等</h3><h3 id="2-如何将Integer-基本数据结构-映射成流的每个元素"><a href="#2-如何将Integer-基本数据结构-映射成流的每个元素" class="headerlink" title="2-&gt;如何将Integer(基本数据结构)映射成流的每个元素?"></a>2-&gt;如何将Integer(基本数据结构)映射成流的每个元素?</h3><h3 id="3-有的Stream能重复利用，有的却不行"><a href="#3-有的Stream能重复利用，有的却不行" class="headerlink" title="3-&gt;有的Stream能重复利用，有的却不行?"></a>3-&gt;有的Stream能重复利用，有的却不行?</h3><h3 id="4-终结方法"><a href="#4-终结方法" class="headerlink" title="4-&gt;终结方法"></a>4-&gt;终结方法</h3><h2 id="思路"><a href="#思路" class="headerlink" title="思路-&gt;"></a>思路-&gt;</h2><h2 id="遇到的困难-合并不了两个流-因为一个是int-类型的流intSteam另一个是String类型List的流"><a href="#遇到的困难-合并不了两个流-因为一个是int-类型的流intSteam另一个是String类型List的流" class="headerlink" title="遇到的困难-&gt;合并不了两个流 因为一个是int[]类型的流intSteam另一个是String类型List的流"></a>遇到的困难-&gt;合并不了两个流 因为一个是int[]类型的流intSteam另一个是String类型List的流</h2><h2 id="收获"><a href="#收获" class="headerlink" title="收获-&gt;"></a>收获-&gt;</h2><h3 id="先学中间操作-这是对list的流进行fliter-Map"><a href="#先学中间操作-这是对list的流进行fliter-Map" class="headerlink" title="先学中间操作 这是对list的流进行fliter Map"></a>先学中间操作 这是对list的流进行fliter Map</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//过滤</span></span><br><span class="line">List&lt;String&gt; stringslist=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        stringslist.add(<span class="string">&quot;三哥&quot;</span>);</span><br><span class="line">        stringslist.add(<span class="string">&quot;三神&quot;</span>);</span><br><span class="line">        stringslist.add(<span class="string">&quot;三圣&quot;</span>);</span><br><span class="line">        stringslist.add(<span class="string">&quot;三仙人&quot;</span>);</span><br><span class="line">        stringslist.add(<span class="string">&quot;大风车&quot;</span>);</span><br><span class="line">        List&lt;String&gt; stringslistflister=stringslist.stream().filter(s -&gt; s.startsWith(<span class="string">&quot;三&quot;</span>)&amp;&amp;s.length()==<span class="number">3</span>).collect(Collectors.toList());</span><br><span class="line">        System.out.println(stringslistflister);</span><br><span class="line"><span class="comment">//对元素进行加工</span></span><br><span class="line">        List&lt;String&gt; stringListmap=stringslist.stream().map(x-&gt;x+<span class="string">&quot;这就是map的含金量&quot;</span>).collect(Collectors.toList());</span><br><span class="line">        System.out.println(stringListmap);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="然后试试基本数据类型"><a href="#然后试试基本数据类型" class="headerlink" title="然后试试基本数据类型"></a>然后试试基本数据类型</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//创建流,利用Arrays</span></span><br><span class="line">        <span class="type">int</span>[] ints=&#123;&#125;;</span><br><span class="line">        <span class="comment">//在使用完Collec foreach等 我要重新创建一个流，以后流就以intstream命名</span></span><br><span class="line">        IntStream intStream=Arrays.stream(ints);</span><br><span class="line">        List&lt;Integer&gt; integerList=<span class="literal">null</span>;</span><br><span class="line">        <span class="comment">//直接变成流</span></span><br><span class="line">        Stream&lt;Integer&gt; integerToStream=Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">0</span>);</span><br><span class="line">        <span class="comment">//Stream常用的方法 程序执行到这里的时候IntStream-&gt;Integer-&gt;List&lt;Integer&gt;</span></span><br><span class="line">        integerList=intStream.filter(s-&gt;s&gt;<span class="number">2</span>).boxed().collect(Collectors.toList());</span><br><span class="line">        System.out.println(integerList);</span><br><span class="line">        <span class="comment">//错误因为流一旦被collection 和 foreach消费 那么就不行得重新创建</span></span><br><span class="line">        <span class="comment">//重新写入流就可以执行</span></span><br><span class="line">        intStream=Arrays.stream(ints);</span><br><span class="line">        integerList=intStream.sorted().boxed().collect(Collectors.toList());</span><br><span class="line">        System.out.println(integerList);</span><br><span class="line">        <span class="comment">//获取前面的元素</span></span><br><span class="line">        intStream=Arrays.stream(ints);</span><br><span class="line">        integerList=intStream.limit(<span class="number">3</span>).boxed().collect(Collectors.toList());</span><br><span class="line">        System.out.println(integerList);</span><br><span class="line">        <span class="comment">//跳过之前的元素</span></span><br><span class="line">        intStream= Arrays.stream(ints);</span><br><span class="line">        integerList=intStream.skip(<span class="number">1</span>).collect(Collectors.toList());</span><br><span class="line">        System.out.println(integerList);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="请注意我的合并操作"><a href="#请注意我的合并操作" class="headerlink" title="请注意我的合并操作"></a>请注意我的合并操作</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">intStream=Arrays.stream(ints);</span><br><span class="line">        Stream&lt;String&gt; listStream=stringslist.stream();</span><br><span class="line">        Stream&lt;Object&gt; concat = Stream.concat(intStream.mapToObj(Integer::toString), listStream);</span><br><span class="line">        concat.forEach(x-&gt; System.out.print(x.toString()+<span class="string">&quot;\t&quot;</span>));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/03/Lmr-first-Stream/" data-id="clyplstc80001igv0fa86ao7r" data-title="Lmrzzz-First-Stream" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Stream/" rel="tag">Stream</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/concat/" rel="tag">concat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mapToObj/" rel="tag">mapToObj</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-first-Collection-Map" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/02/Lmr-first-Collection-Map/" class="article-date">
-  <time class="dt-published" datetime="2024-07-02T13:38:20.000Z" itemprop="datePublished">2024-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/02/Lmr-first-Collection-Map/">Lmrzzz-first-Collection-Map</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑-嵌套流Map，如地级市的展示"><a href="#困惑-嵌套流Map，如地级市的展示" class="headerlink" title="困惑-&gt;嵌套流Map，如地级市的展示"></a>困惑-&gt;嵌套流Map，如地级市的展示</h2><h2 id="思路-嵌套之后-在内部定义Map用于传递参数"><a href="#思路-嵌套之后-在内部定义Map用于传递参数" class="headerlink" title="思路-&gt;嵌套之后 在内部定义Map用于传递参数"></a>思路-&gt;嵌套之后 在内部定义Map用于传递参数</h2><h2 id="遇到的困难-注意嵌套的时候使用map-而不是hashmap使得代码过于复杂"><a href="#遇到的困难-注意嵌套的时候使用map-而不是hashmap使得代码过于复杂" class="headerlink" title="遇到的困难-&gt;注意嵌套的时候使用map 而不是hashmap使得代码过于复杂"></a>遇到的困难-&gt;注意嵌套的时候使用map 而不是hashmap使得代码过于复杂</h2><h2 id="收获-性质以及定义-两种遍历"><a href="#收获-性质以及定义-两种遍历" class="headerlink" title="收获-&gt;性质以及定义;两种遍历"></a>收获-&gt;性质以及定义;两种遍历</h2><h3 id="从零开始的Map基本学习"><a href="#从零开始的Map基本学习" class="headerlink" title="从零开始的Map基本学习"></a>从零开始的Map基本学习</h3><h4 id="Map是一个双表-也就是键值对-键不可重复"><a href="#Map是一个双表-也就是键值对-键不可重复" class="headerlink" title="Map是一个双表 -&gt;也就是键值对;键不可重复"></a>Map是一个双表 -&gt;也就是键值对;键不可重复</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Map又称键值对</span></span><br><span class="line"><span class="keyword">static</span> Map&lt;Integer, String&gt; stringMap=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="comment">//获取键和值的方法</span></span><br><span class="line">String getValueBykey=stringMap.get(<span class="number">3</span>);</span><br><span class="line">        System.out.println(getValueBykey);</span><br><span class="line">        <span class="type">boolean</span> isContainKey=stringMap.containsKey(<span class="number">2</span>);</span><br><span class="line">        <span class="type">boolean</span> isContainValue=stringMap.containsValue(<span class="string">&quot;ww&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="键少值多用于统计的案例"><a href="#键少值多用于统计的案例" class="headerlink" title="键少值多用于统计的案例"></a>键少值多用于统计的案例</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Map&lt;String,Integer&gt; allVotePeople=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        String[] place=&#123;<span class="string">&quot;A&quot;</span>,<span class="string">&quot;B&quot;</span>,<span class="string">&quot;C&quot;</span>,<span class="string">&quot;D&quot;</span>&#125;;</span><br><span class="line">        <span class="type">int</span> numPeople=<span class="number">80</span>;</span><br><span class="line">        <span class="type">int</span>[] votePelple=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">80</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; numPeople; i++) &#123;</span><br><span class="line">            votePelple[i]=i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//初始化了</span></span><br><span class="line">        Random random=<span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; numPeople; i++) &#123;</span><br><span class="line">            <span class="type">int</span> r= random.nextInt(<span class="number">4</span>);</span><br><span class="line">            <span class="keyword">if</span> (allVotePeople.containsKey(place[r]))&#123;</span><br><span class="line">                allVotePeople.put(place[r],allVotePeople.get(place[r])+<span class="number">1</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                allVotePeople.put(place[r],<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> countA=allVotePeople.getOrDefault(<span class="string">&quot;A&quot;</span>,<span class="number">0</span>);</span><br><span class="line">        System.out.println(countA);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="两种遍历方法一种Entry-一种Lambda都要掌握"><a href="#两种遍历方法一种Entry-一种Lambda都要掌握" class="headerlink" title="两种遍历方法一种Entry 一种Lambda都要掌握"></a>两种遍历方法一种Entry 一种Lambda都要掌握</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">charaterHashMap</span><span class="params">()</span>&#123;</span><br><span class="line">        Map&lt;Student,String&gt; stringMap=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        Student student1=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Sangge&quot;</span>,<span class="number">98</span>);</span><br><span class="line">        Student student2=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;ChenjianQ&quot;</span>,<span class="number">100</span>);</span><br><span class="line">        Student student3=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;waiwaiKang&quot;</span>,<span class="number">99</span>);</span><br><span class="line">        stringMap.put(student1,<span class="string">&quot;湖北&quot;</span>);</span><br><span class="line">        stringMap.put(student2,<span class="string">&quot;湖南&quot;</span>);</span><br><span class="line">        stringMap.put(student3,<span class="string">&quot;江西&quot;</span>);</span><br><span class="line">        <span class="comment">//看我使用Entry遍历</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Student,String&gt; stringEntry: stringMap.entrySet())&#123;</span><br><span class="line">            Student student=<span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">            student=stringEntry.getKey();</span><br><span class="line">            String s=stringEntry.getValue();</span><br><span class="line">            System.out.println(student+<span class="string">&quot;Value&quot;</span> +s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//看我展示lambda</span></span><br><span class="line">        System.out.println(<span class="string">&quot;下面是lambda&quot;</span>);</span><br><span class="line">        stringMap.forEach((Student,String)-&gt;&#123;</span><br><span class="line">            System.out.println(Student.toString()+String);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="TreeMap的性质-跟treeList一样也要写个比较器"><a href="#TreeMap的性质-跟treeList一样也要写个比较器" class="headerlink" title="TreeMap的性质(跟treeList一样也要写个比较器)"></a>TreeMap的性质(跟treeList一样也要写个比较器)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">charaterTreeMap</span><span class="params">()</span>&#123;</span><br><span class="line">        Map&lt;Student,String&gt; stringtreeMap=<span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;(<span class="keyword">new</span> <span class="title class_">StudentCompare</span>());</span><br><span class="line">        Student student1=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Sangge&quot;</span>,<span class="number">98</span>);</span><br><span class="line">        Student student2=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;ChenjianQ&quot;</span>,<span class="number">100</span>);</span><br><span class="line">        Student student3=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;waiwaiKang&quot;</span>,<span class="number">99</span>);</span><br><span class="line">        stringtreeMap.put(student1,<span class="string">&quot;湖北&quot;</span>);</span><br><span class="line">        stringtreeMap.put(student2,<span class="string">&quot;湖南&quot;</span>);</span><br><span class="line">        stringtreeMap.put(student3,<span class="string">&quot;江西&quot;</span>);</span><br><span class="line">        stringtreeMap.forEach((x1,x2)-&gt;&#123;</span><br><span class="line">            System.out.println(x1+x2);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">StudentCompare</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;Student&gt;&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Student o1, Student o2)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">int</span>) (o1.getPoint()-o2.getPoint());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="这是嵌套案例注意利用Entry进行遍历"><a href="#这是嵌套案例注意利用Entry进行遍历" class="headerlink" title="这是嵌套案例注意利用Entry进行遍历"></a>这是嵌套案例注意利用Entry进行遍历</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Map&lt;String,String[]&gt; citiMap=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        Map&lt;String,Map&lt;String,String[]&gt;&gt;  provinceMap=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        citiMap.put(<span class="string">&quot;湖北省&quot;</span>, <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;武汉市&quot;</span>, <span class="string">&quot;恩施市&quot;</span>, <span class="string">&quot;孝感市&quot;</span>, <span class="string">&quot;随州市&quot;</span>&#125;);</span><br><span class="line">        citiMap.put(<span class="string">&quot;江苏省&quot;</span>, <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;南京市&quot;</span>, <span class="string">&quot;扬州市&quot;</span>, <span class="string">&quot;苏州市&quot;</span>, <span class="string">&quot;无锡市&quot;</span>&#125;);</span><br><span class="line">        citiMap.put(<span class="string">&quot;河北省&quot;</span>, <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;石家庄市&quot;</span>, <span class="string">&quot;唐山市&quot;</span>, <span class="string">&quot;保定市&quot;</span>, <span class="string">&quot;张家口市&quot;</span>&#125;);</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String,String[]&gt; cityEntry: citiMap.entrySet())&#123;</span><br><span class="line">            String provinceName= cityEntry.getKey();</span><br><span class="line">            String[] cityName=cityEntry.getValue();</span><br><span class="line">            <span class="comment">//将数据存到内部Map中传递给大Map</span></span><br><span class="line">            Map&lt;String,String[]&gt; inner=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">            inner.put(provinceName,cityName);</span><br><span class="line">            provinceMap.put(provinceName,inner);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String,Map&lt;String,String[]&gt;&gt; stringMapEntry: provinceMap.entrySet())&#123;</span><br><span class="line">            String citiName=stringMapEntry.getKey();</span><br><span class="line">            Map&lt;String,String[]&gt; stringMap=stringMapEntry.getValue();</span><br><span class="line">            String[] strings=stringMap.get(citiName);</span><br><span class="line">            System.out.println(citiName+<span class="string">&quot;=&quot;</span>+Arrays.toString(strings));</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">     </span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/02/Lmr-first-Collection-Map/" data-id="clyplstca0003igv0efg14v9e" data-title="Lmrzzz-first-Collection-Map" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HashMap-TreeMap-LinkMap/" rel="tag">HashMap,TreeMap,LinkMap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Map/" rel="tag">Map</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-lmr-second-landord" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/02/lmr-second-landord/" class="article-date">
-  <time class="dt-published" datetime="2024-07-02T09:40:14.000Z" itemprop="datePublished">2024-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/02/lmr-second-landord/">Lmrzzz-second-TreeSet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑-为什么我的手牌在经历了Compare后-反而会丢掉一些值"><a href="#困惑-为什么我的手牌在经历了Compare后-反而会丢掉一些值" class="headerlink" title="困惑-&gt;为什么我的手牌在经历了Compare后 反而会丢掉一些值"></a>困惑-&gt;为什么我的手牌在经历了Compare后 反而会丢掉一些值</h2><h2 id="思路-Compare类理解不了"><a href="#思路-Compare类理解不了" class="headerlink" title="思路-&gt;Compare类理解不了"></a>思路-&gt;Compare类理解不了</h2><h2 id="遇到的困难-Compare类的返回值的具体意义"><a href="#遇到的困难-Compare类的返回值的具体意义" class="headerlink" title="遇到的困难-&gt;Compare类的返回值的具体意义"></a>遇到的困难-&gt;Compare类的返回值的具体意义</h2><h2 id="收获-理解Treeset的性质，构造函数，和Comparator的重写compare-一般在重写compare的时候都是费尽心血去得到int然后相减去，但是这个地方要求的是”让相同的值变为不相同-所以本来应该返回0的情况直接返回正负1就好”"><a href="#收获-理解Treeset的性质，构造函数，和Comparator的重写compare-一般在重写compare的时候都是费尽心血去得到int然后相减去，但是这个地方要求的是”让相同的值变为不相同-所以本来应该返回0的情况直接返回正负1就好”" class="headerlink" title="收获-&gt;理解Treeset的性质，构造函数，和Comparator的重写compare;一般在重写compare的时候都是费尽心血去得到int然后相减去，但是这个地方要求的是”让相同的值变为不相同-&gt;所以本来应该返回0的情况直接返回正负1就好”"></a>收获-&gt;理解Treeset的性质，构造函数，和Comparator的重写compare;一般在重写compare的时候都是费尽心血去得到int然后相减去，但是这个地方要求的是”让相同的值变为不相同-&gt;所以本来应该返回0的情况直接返回正负1就好”</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">pointCardCompare</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;String&gt; &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String o1, String o2)</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> conVert(o1)-conVert(o2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">conVert</span><span class="params">(String s)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (s.equals(<span class="string">&quot;🃏&quot;</span>))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">16</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (s.equals(<span class="string">&quot;🤡&quot;</span>))&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">17</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            String s1=s.substring(<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">switch</span> (s1)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;10&quot;</span>-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;J&quot;</span>-&gt; &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">11</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;Q&quot;</span>-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">12</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;K&quot;</span>-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">13</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;A&quot;</span>-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">14</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;2&quot;</span>-&gt;&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">15</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">default</span> -&gt; &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> Integer.parseInt(s1);</span><br><span class="line">                    &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">                        System.out.println(<span class="string">&quot;截取后的字符不对&quot;</span>+e.getMessage());</span><br><span class="line">                        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<p>这个时候发现输出没达到预期-&gt;发现相同的手牌不会出现-&gt;查看比较器。<br>于是修改为:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">pointCardCompare</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;String&gt; &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String o1, String o2)</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (conVert(o1)==conVert(o2))&#123;</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> conVert(o1)-conVert(o2);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
-
-<p>原理是Compare 返回0的时候认为两个数相同，但是我的TreeSet不支持相同的元素,所以我直接添加一个条件判断改成-1或者就好了;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/02/lmr-second-landord/" data-id="clyplstck0011igv08gykcf8i" data-title="Lmrzzz-second-TreeSet" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Comparator/" rel="tag">Comparator</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TreeSetConstructor/" rel="tag">TreeSetConstructor</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-first-Collection-List" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/02/Lmr-first-Collection-List/" class="article-date">
-  <time class="dt-published" datetime="2024-07-02T03:12:00.000Z" itemprop="datePublished">2024-07-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/02/Lmr-first-Collection-List/">Lmrzzz-first-Collection-list</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑-Collection下那么多子类-该如何使用-他们的性质如何？"><a href="#困惑-Collection下那么多子类-该如何使用-他们的性质如何？" class="headerlink" title="困惑-&gt;Collection下那么多子类,该如何使用?他们的性质如何？"></a>困惑-&gt;Collection下那么多子类,该如何使用?他们的性质如何？</h2><h2 id="思路-先学list在学set-最后看list的底层原理"><a href="#思路-先学list在学set-最后看list的底层原理" class="headerlink" title="思路-&gt; 先学list在学set,最后看list的底层原理"></a>思路-&gt; 先学list在学set,最后看list的底层原理</h2><h2 id="遇到的困难-Hashset中存储实例的时候，存入数值相同的实例，发现重复的元素也会存到hashset中"><a href="#遇到的困难-Hashset中存储实例的时候，存入数值相同的实例，发现重复的元素也会存到hashset中" class="headerlink" title="遇到的困难-&gt;Hashset中存储实例的时候，存入数值相同的实例，发现重复的元素也会存到hashset中"></a>遇到的困难-&gt;Hashset中存储实例的时候，存入数值相同的实例，发现重复的元素也会存到hashset中</h2><h2 id="收获-性质以及定义-还有熟悉额外的打印输出利用stream流-学会在类中重写equal和hashcode这样在存入数据的时候可以保留hashcode的性质"><a href="#收获-性质以及定义-还有熟悉额外的打印输出利用stream流-学会在类中重写equal和hashcode这样在存入数据的时候可以保留hashcode的性质" class="headerlink" title="收获-&gt;性质以及定义;还有熟悉额外的打印输出利用stream流;学会在类中重写equal和hashcode这样在存入数据的时候可以保留hashcode的性质"></a>收获-&gt;性质以及定义;还有熟悉额外的打印输出利用stream流;学会在类中重写equal和hashcode这样在存入数据的时候可以保留hashcode的性质</h2><p>当谈及 Java 集合框架时，主要分为 List 和 Set 两大类：</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>特性：<br>有序（元素按照插入顺序或自定义顺序排列）<br>可重复（可以包含相同的元素）<br>有索引（可以通过索引访问元素）</p>
-<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>原理：<br>基于动态数组实现<br>支持快速随机访问和修改元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">arraylistCharater</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//List都有的有序 可重复 有索引</span></span><br><span class="line">        ArrayList arrayList=<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(Arrays.asList(<span class="string">&quot;qwer&quot;</span>,<span class="string">&quot;EQWE&quot;</span>,<span class="string">&quot;SAD&quot;</span>,<span class="string">&quot;ASD&quot;</span>,<span class="string">&quot;WQ&quot;</span>));</span><br><span class="line">        arrayList.add(<span class="string">&quot;xixi&quot;</span>);</span><br><span class="line">        <span class="comment">//这个就是可重复</span></span><br><span class="line">        arrayList.add(<span class="string">&quot;xixi&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这个就是有序</span></span><br><span class="line">        System.out.println(arrayList.stream().toList());</span><br><span class="line">        arrayList.set(<span class="number">1</span>,<span class="string">&quot;在第一个地方加我&quot;</span>);</span><br><span class="line">        System.out.println(arrayList.stream().toList());</span><br><span class="line">        <span class="comment">//这个就叫有索引</span></span><br><span class="line">        System.out.println(arrayList.get(<span class="number">3</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>原理：<br>基于双向链表实现,根据进入的顺序排序<br>支持高效的插入和删除操作，但访问元素需要遍历链表</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">LinkedHashSetCharater</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//有序(按照插入的顺序) 不重复 无索引</span></span><br><span class="line">        LinkedHashSet linkedHashSet=<span class="keyword">new</span> <span class="title class_">LinkedHashSet</span>&lt;&gt;(Arrays.asList(<span class="string">&quot;S&quot;</span>,<span class="string">&quot;X&quot;</span>,<span class="string">&quot;E&quot;</span>,<span class="string">&quot;1&quot;</span>,<span class="string">&quot;8&quot;</span>,<span class="string">&quot;Z&quot;</span>));</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;我第一个加入&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;wlgsg&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;wlgsg&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;我最后加入！&quot;</span>);</span><br><span class="line">        linkedHashSet.stream().forEach((x)-&gt; System.out.print(x+<span class="string">&quot;\t&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>特性：<br>无序（元素没有特定顺序）<br>不可重复（不允许包含重复的元素）<br>无索引（不能通过索引访问元素）</p>
-<h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><p>原理：<br>基于哈希表实现,存储实例的时候注意在类中重写equal和hashcode,这样才可以保证Hashset的不可重复特性<br>插入、删除、查找操作的平均时间复杂度为 O(1)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">HashsetCharater</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//无序 不重复 无索引</span></span><br><span class="line">        HashSet hashSet=<span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;(Arrays.asList(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;2&quot;</span>,<span class="string">&quot;3&quot;</span>,<span class="string">&quot;4&quot;</span>,<span class="string">&quot;5&quot;</span>));</span><br><span class="line">        hashSet.add(<span class="string">&quot;5&quot;</span>);</span><br><span class="line">        <span class="comment">//这个就叫不重复</span></span><br><span class="line">        <span class="comment">//两种打印方法 第一种是将hashset变成流收集到list中 然后在打印list</span></span><br><span class="line">        System.out.println(hashSet.stream().toList());</span><br><span class="line">        <span class="comment">//这个就叫做 将hashset变成流调用forEach方法，</span></span><br><span class="line">        hashSet.stream().forEach((x)-&gt; System.out.print(x));</span><br><span class="line">        <span class="comment">//hashSet.get(4);报错 因为hashSet无索引</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HashSetDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashSet&lt;Student&gt; studentHashSet=<span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        Student student1=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明1&quot;</span>,<span class="number">50</span>);</span><br><span class="line">        Student student2=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明2&quot;</span>,<span class="number">60</span>);</span><br><span class="line">        Student student3=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明3&quot;</span>,<span class="number">70</span>);</span><br><span class="line">        Student student4=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明4&quot;</span>,<span class="number">80</span>);</span><br><span class="line">        Student student5=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明1&quot;</span>,<span class="number">50</span>);</span><br><span class="line">        studentHashSet.add(student1);</span><br><span class="line">        studentHashSet.add(student2);</span><br><span class="line">        studentHashSet.add(student3);</span><br><span class="line">        studentHashSet.add(student4);</span><br><span class="line">        studentHashSet.add(student5);</span><br><span class="line">        studentHashSet.stream().forEach((x)-&gt; System.out.println(x));</span><br><span class="line"></span><br><span class="line">        HashSet&lt;Integer&gt; integerHashSet=<span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        integerHashSet.add(<span class="number">1</span>);</span><br><span class="line">        integerHashSet.add(<span class="number">1</span>);</span><br><span class="line">        integerHashSet.add(<span class="number">12</span>);</span><br><span class="line">        integerHashSet.stream().forEach((x)-&gt; System.out.println(x));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><p>原理：<br>基于红黑树（自平衡二叉查找树）实现<br>元素按照自然顺序或者定制顺序进行排序</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">treeSetCharater</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//升序排列 这就是treeSet  不重复 无索引</span></span><br><span class="line">        TreeSet treeSet=<span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(Arrays.asList(<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">97</span>,<span class="number">98</span>,<span class="number">43</span>,<span class="number">12</span>,<span class="number">89</span>));</span><br><span class="line">        treeSet.stream().forEach((x)-&gt;System.out.print(x+<span class="string">&quot;\t&quot;</span>));</span><br><span class="line">         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        TreeSet treeSet=<span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(Arrays.asList(<span class="string">&quot;aqweqwe&quot;</span>,<span class="string">&quot;bLKSAJD&quot;</span>,<span class="string">&quot;zklsajd&quot;</span>,<span class="string">&quot;我？&quot;</span>,<span class="string">&quot;shou字母排序&quot;</span>,<span class="string">&quot;ASDASDASD&quot;</span>,<span class="string">&quot;ZSsalkd&quot;</span>));</span><br><span class="line">        <span class="comment">//按照首字母的编码排序</span></span><br><span class="line">        treeSet.stream().forEach((x)-&gt; System.out.print(x+<span class="string">&quot;\t&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>当我利用TreeSet添加类似于Student类的时候</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Student student1=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明1&quot;</span>,<span class="number">50</span>);</span><br><span class="line">        Student student2=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明2&quot;</span>,<span class="number">60</span>);</span><br><span class="line">        Student student3=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明3&quot;</span>,<span class="number">70</span>);</span><br><span class="line">        Student student4=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明4&quot;</span>,<span class="number">80</span>);</span><br><span class="line">        Student student5=<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;小明1&quot;</span>,<span class="number">50</span>);</span><br><span class="line">studentTreeSet.add(student1);</span><br><span class="line">        studentTreeSet.add(student2);</span><br><span class="line">        studentTreeSet.add(student3);</span><br><span class="line">        studentTreeSet.add(student4);</span><br><span class="line">        studentTreeSet.add(student5);</span><br><span class="line">        studentTreeSet.stream().forEach((x)-&gt; System.out.println(x+<span class="string">&quot;\t&quot;</span>));=</span><br></pre></td></tr></table></figure>
-
-<p>这个时候Treeset的有序会实现吗？当然不会，编译器会报错 告诉你你的Treeset没有写比较器<br>那么这个时候有两种办法可以实现</p>
-<h5 id="Method1"><a href="#Method1" class="headerlink" title="Method1"></a>Method1</h5><p>在Student类里面继承然后重写Comparable类:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Student&gt;&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">ComparaTo</span><span class="params">(Student o)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Integer.compare(o.point,<span class="built_in">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在main函数中执行下面代码就可以按照顺序进行排序</span></span><br><span class="line">studentTreeSet.stream().forEach((x)-&gt; System.out.println(x+<span class="string">&quot;\t&quot;</span>));</span><br></pre></td></tr></table></figure>
-
-<h5 id="Method2"><a href="#Method2" class="headerlink" title="Method2"></a>Method2</h5><p>新建一个类我取名为StudentPointCompare继承Compartor接口然后重写</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StudentTreeSetComparator</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;Student&gt; &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Student o1,Student o2)</span> &#123;</span><br><span class="line">            <span class="type">int</span> x=o1.point;</span><br><span class="line">            <span class="type">int</span> y=o2.point;</span><br><span class="line">            <span class="keyword">if</span> (x&gt;y)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (x&lt;y)&#123;</span><br><span class="line">                <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;<span class="keyword">return</span> <span class="number">0</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//利用了TreeSet的构造器,在创建的Treeset时候要调用该比较器,就可以完成比较</span></span><br><span class="line">TreeSet&lt;Student&gt; studentTreeSet=<span class="keyword">new</span> <span class="title class_">TreSet</span>(<span class="keyword">new</span> <span class="title class_">StudentTreeSetComparator</span>())</span><br><span class="line">studentTreeSet.stream().forEach((x)-&gt; System.out.println(x+<span class="string">&quot;\t&quot;</span>));</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><p>特性：<br>继承自 HashSet<br>内部使用链表维护插入顺序，因此可以保持元素的插入顺序<br>这些类在 Java 集合框架中各自有着不同的实现方式和特点，适用于不同的数据存储和访问需求。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/02/Lmr-first-Collection-List/" data-id="clyplstc50000igv0bix43vmk" data-title="Lmrzzz-first-Collection-list" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/List/" rel="tag">List</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Set/" rel="tag">Set</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-first-konw-io" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/01/Lmr-first-konw-io/" class="article-date">
-  <time class="dt-published" datetime="2024-07-01T11:30:15.000Z" itemprop="datePublished">2024-07-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/01/Lmr-first-konw-io/">Lmrzzz-first-io</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑-1-什么是IO流？2-字符流和字节流的区别？3-基本数据类型是什么流-4-流的基本性质"><a href="#困惑-1-什么是IO流？2-字符流和字节流的区别？3-基本数据类型是什么流-4-流的基本性质" class="headerlink" title="困惑-&gt;1 什么是IO流？2 字符流和字节流的区别？3 基本数据类型是什么流?4 流的基本性质"></a>困惑-&gt;1 什么是IO流？2 字符流和字节流的区别？3 基本数据类型是什么流?4 流的基本性质</h2><h2 id="思路-逐一敲代码"><a href="#思路-逐一敲代码" class="headerlink" title="思路-&gt;逐一敲代码"></a>思路-&gt;逐一敲代码</h2><h2 id="遇到的困难-混乱概念"><a href="#遇到的困难-混乱概念" class="headerlink" title="遇到的困难-&gt;混乱概念"></a>遇到的困难-&gt;混乱概念</h2><h2 id="收获-初次面熟io"><a href="#收获-初次面熟io" class="headerlink" title="收获-&gt;初次面熟io"></a>收获-&gt;初次面熟io</h2><p>1 io流就是Input流和Output流 说人话就是输入输出流,用于内存和存储设备(外部设备)的交换</p>
-<p>2 字符流就是用来处理文本，就是txt的，经典的类有比如Write和Read,读和写更接近人类的习惯，字符也是。<br>  字节流就是都可以处理的,比如FileInputStream和FileOutputStream</p>
-<p>3 基本数据类型的输入输出流是字节流，可以读写字节和字符还可以读写基本数据类型</p>
-<p>4 有队列的基本性质 先进先出，还要满足文件的RO(只读)和WO(只写)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用字节流的两个类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IoDemo02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    outputStreamIo();</span><br><span class="line">        System.out.println(<span class="string">&quot;---------------------------------&quot;</span>);</span><br><span class="line">    inputeStreamIo();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">inputeStreamIo</span><span class="params">()</span>&#123;</span><br><span class="line">        FileInputStream inputStream=<span class="literal">null</span>;</span><br><span class="line">        InputStreamReader inputStreamReader=<span class="literal">null</span>;</span><br><span class="line">        BufferedReader bufferedReader=<span class="literal">null</span>;</span><br><span class="line">        String lolPath=<span class="string">&quot;C:\\Users\\90819\\Documents\\lol.txt&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            inputStream=<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(lolPath);</span><br><span class="line">            inputStreamReader=<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(inputStream);</span><br><span class="line">            bufferedReader=<span class="keyword">new</span> <span class="title class_">BufferedReader</span>(inputStreamReader);</span><br><span class="line">            String line;</span><br><span class="line">            <span class="keyword">while</span> ((line=bufferedReader.readLine())!=<span class="literal">null</span>)&#123;</span><br><span class="line">                System.out.println(line);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;文件没有找到&quot;</span>+e.getMessage());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取的时候错误&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (inputStream!=<span class="literal">null</span>)&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    inputStream.close();</span><br><span class="line">                &#125;<span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;关闭任务的时候发生错误&quot;</span>+e.getMessage());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">outputStreamIo</span><span class="params">()</span>&#123;</span><br><span class="line">        String lolPath=<span class="string">&quot;C:\\Users\\90819\\Documents\\lol.txt&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileOutputStream fileOutputStream=<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(lolPath,<span class="literal">true</span>);</span><br><span class="line">            fileOutputStream.write(System.getProperty(<span class="string">&quot;line.separator&quot;</span>).getBytes());</span><br><span class="line">            fileOutputStream.write(<span class="string">&quot;陈某杰 6月29日 八点说上号一直托到九点&quot;</span>.getBytes());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage()+<span class="string">&quot;没找到文件阿牢底！&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;输入信息的时候有错误&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是字符流的写</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String path=<span class="string">&quot;C:\\Linshi\\read.txt&quot;</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileWriter fileWriter=<span class="keyword">new</span> <span class="title class_">FileWriter</span>(path);</span><br><span class="line">           <span class="comment">/* char[] chars=&#123;&#x27;s&#x27;,&#x27;s&#x27;,&#x27;s&#x27;,&#x27;w&#x27;,&#x27;x&#x27;&#125;;</span></span><br><span class="line"><span class="comment">            fileWriter.write(chars,0,chars.length);*/</span></span><br><span class="line">            <span class="type">char</span>[] chars=<span class="string">&quot;我直接展示String转换成chars数组&quot;</span>.toCharArray();</span><br><span class="line">            fileWriter.write(chars,<span class="number">0</span>,chars.length);</span><br><span class="line">            fileWriter.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取文件的时候出错&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//这是字符流的读</span></span><br><span class="line"><span class="keyword">package</span> Day18.lmrio.firstkonwit;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.*;</span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">FileReaderDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String path=<span class="string">&quot;C:\\Linshi\\read.txt&quot;</span>;</span><br><span class="line">        <span class="type">int</span> b=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            FileReader fileReader=<span class="keyword">new</span> <span class="title class_">FileReader</span>(path);</span><br><span class="line">            <span class="keyword">while</span> ((b=fileReader.read())!=-<span class="number">1</span>)&#123;</span><br><span class="line">                System.out.println((<span class="type">char</span>) b);</span><br><span class="line">            &#125;</span><br><span class="line">            fileReader.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage()+<span class="string">&quot;你没有找到你的文件牢底&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage()+<span class="string">&quot;读取的时候出问题&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是利用byte,short,int的长度来控制读字符</span></span><br><span class="line"><span class="comment">//基本数据类型输入输出流是一个字节流，该流不仅可以读写字节和字符，还可以读写基本数据类型。</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DataInputDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        String pat=<span class="string">&quot;C:\\Linshi\\datacontract.txt&quot;</span>;</span><br><span class="line">        <span class="comment">//data的实现要通过fileInput</span></span><br><span class="line">        FileInputStream fileInputStream= <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            fileInputStream = <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(pat);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">        &#125;</span><br><span class="line">        DataInputStream dataInputStream=<span class="keyword">new</span> <span class="title class_">DataInputStream</span>(fileInputStream);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="type">byte</span> i=dataInputStream.readByte();</span><br><span class="line">            System.out.println(i);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;读取第一个的时候粗错&quot;</span>+e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/01/Lmr-first-konw-io/" data-id="clyplstcd000aigv0gmflhdk4" data-title="Lmrzzz-first-io" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-first-know-listen" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/01/Lmr-first-know-listen/" class="article-date">
-  <time class="dt-published" datetime="2024-07-01T11:30:15.000Z" itemprop="datePublished">2024-07-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/01/Lmr-first-know-listen/">Lmrzzz-first-swing</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="困惑-如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？"><a href="#困惑-如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？" class="headerlink" title="困惑-&gt;如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？"></a>困惑-&gt;如何将键盘和jText的内容绑定起来？如何点击按钮使得JtextArea获取JtextFile的内容？</h2><h2 id="思路-利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类"><a href="#思路-利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类" class="headerlink" title="思路-&gt;利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类"></a>思路-&gt;利用Field的addKeyListener实现监听，书写匿名内部类；利用按钮的addActionListener实现监听，通过匿名内部类</h2><h2 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h2><h2 id="收获-学习监听事件发现跟js的监听一模一样"><a href="#收获-学习监听事件发现跟js的监听一模一样" class="headerlink" title="收获-&gt;学习监听事件发现跟js的监听一模一样"></a>收获-&gt;学习监听事件发现跟js的监听一模一样</h2><p>关键代码:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">send = <span class="keyword">new</span> <span class="title class_">JButton</span>(<span class="string">&quot;发送&quot;</span>);</span><br><span class="line">        send.setBounds(<span class="number">200</span>,<span class="number">230</span>,<span class="number">70</span>,<span class="number">20</span>);</span><br><span class="line">        send.addActionListener(e -&gt; &#123;</span><br><span class="line">            jTxtArea.append(jTextField.getText()+<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">            jTextField.setText(<span class="string">&quot;&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        jTextField=<span class="keyword">new</span> <span class="title class_">JTextField</span>();</span><br><span class="line">        jTextField.setBounds(<span class="number">10</span>,<span class="number">230</span>,<span class="number">180</span>,<span class="number">20</span>);</span><br><span class="line">        jTextField.addKeyListener(<span class="keyword">new</span> <span class="title class_">KeyAdapter</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">keyPressed</span><span class="params">(KeyEvent e)</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (e.getKeyCode()== KeyEvent.VK_ENTER)&#123;</span><br><span class="line">                    send.doClick();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);        </span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/01/Lmr-first-know-listen/" data-id="clyplstcd000cigv0dad8bmsg" data-title="Lmrzzz-first-swing" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-first-sort" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/28/Lmr-first-sort/" class="article-date">
-  <time class="dt-published" datetime="2024-06-28T13:18:14.000Z" itemprop="datePublished">2024-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/28/Lmr-first-sort/">Lmrzzz-first-sort</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>排序算法：冒泡 选择 插入 快速排序<br>困惑:<br>思路：<br>遇到的困难： 选择排序的j的初始值 快速排序的中间值<br>收获:1返回数组的时候不需要返回值 因为是索引结构<br>     2 快速排序是基于 分划的思想</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; ints.length; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[i] &gt; ints[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                    swap(ints, i, i + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Selection</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="comment">//选择排序 有最小的就往前面放</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">minIndex</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; ints.length - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[j] &lt; ints[minIndex]) &#123;</span><br><span class="line">                    minIndex = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(ints, minIndex, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Insertion</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="comment">//key要排列的元素</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">key</span> <span class="operator">=</span> ints[i];</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i - <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//j是要排遍历的起点</span></span><br><span class="line">            <span class="comment">//当前面的值大于key的时候 就是有序的最后一个比新添加的更大</span></span><br><span class="line">            <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; ints[j] &gt; key) &#123;</span><br><span class="line">                <span class="comment">//将倒数第二赋给最后一个 一直这样递归到第二个赋给第一个</span></span><br><span class="line">                ints[j + <span class="number">1</span>] = ints[j];</span><br><span class="line">                j = j - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ints[j + <span class="number">1</span>] = key;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//快速排序 划分治之的思想</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">QuickSort</span><span class="params">(<span class="type">int</span>[] ints,<span class="type">int</span> low,<span class="type">int</span> high)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (low&lt;high)&#123;</span><br><span class="line">            <span class="type">int</span> pivotIndex=partition(ints,low,high);</span><br><span class="line">            partition(ints,low,pivotIndex-<span class="number">1</span>);</span><br><span class="line">            partition(ints,pivotIndex+<span class="number">1</span>,high);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="type">int</span> pivot=arr[high];</span><br><span class="line">    <span class="type">int</span> i=(low-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">0</span>; i1 &lt; high; i1++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i1]&lt;pivot)&#123;</span><br><span class="line">                i1++;</span><br><span class="line">                <span class="type">int</span> temp=arr[i];</span><br><span class="line">                arr[i]=arr[i1];</span><br><span class="line">                arr[i]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> temp=arr[i+<span class="number">1</span>];</span><br><span class="line">        arr[i+<span class="number">1</span>]=arr[high];</span><br><span class="line">        arr[high]=temp;</span><br><span class="line">        <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/28/Lmr-first-sort/" data-id="clyplstch000pigv0f3xhh074" data-title="Lmrzzz-first-sort" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Lmr-first-memory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/28/Lmr-first-memory/" class="article-date">
-  <time class="dt-published" datetime="2024-06-28T01:08:14.000Z" itemprop="datePublished">2024-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/28/Lmr-first-memory/">Lmrzzz-first-memory</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><img src="/./images/class.drawio.png" alt="图片"><br><img src="/source/_posts/Lmr-first-memory/class.drawio.png" alt="ww"><br><img src="/class.drawio.png" alt="ww"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/28/Lmr-first-memory/" data-id="clyplstce000gigv0bh6s8mz0" data-title="Lmrzzz-first-memory" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annotation/" rel="tag">Annotation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BufferInputStream/" rel="tag">BufferInputStream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Callable/" rel="tag">Callable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparator/" rel="tag">Comparator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Copy/" rel="tag">Copy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Document/" rel="tag">Document</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/" rel="tag">Element</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap-TreeMap-LinkMap/" rel="tag">HashMap,TreeMap,LinkMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Junit/" rel="tag">Junit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/List/" rel="tag">List</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MutiThead/" rel="tag">MutiThead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Read-properties/" rel="tag">Read-&gt;properties</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Read-xml/" rel="tag">Read-&gt;xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reader-BufferReader/" rel="tag">Reader,BufferReader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RequestMapping/" rel="tag">RequestMapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ResquestMappingHandlerMapping-debug/" rel="tag">ResquestMappingHandlerMapping debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Runable/" rel="tag">Runable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Set/" rel="tag">Set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stream/" rel="tag">Stream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thead/" rel="tag">Thead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheadPool/" rel="tag">TheadPool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TreeSetConstructor/" rel="tag">TreeSetConstructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Writer-BufferWriter/" rel="tag">Writer,BufferWriter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concat/" rel="tag">concat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/invoke/" rel="tag">invoke</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/junit/" rel="tag">junit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logback/" rel="tag">logback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logout/" rel="tag">logout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mapToObj/" rel="tag">mapToObj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflect/" rel="tag">reflect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflect-debug/" rel="tag">reflect debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" rel="tag">两种方式复制MP4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/" rel="tag">匿名内部类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E6%80%81/" rel="tag">多态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" rel="tag">抽象类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE/" rel="tag">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Annotation/" style="font-size: 10px;">Annotation</a> <a href="/tags/BufferInputStream/" style="font-size: 10px;">BufferInputStream</a> <a href="/tags/Callable/" style="font-size: 10px;">Callable</a> <a href="/tags/Comparator/" style="font-size: 10px;">Comparator</a> <a href="/tags/Copy/" style="font-size: 10px;">Copy</a> <a href="/tags/Document/" style="font-size: 10px;">Document</a> <a href="/tags/Element/" style="font-size: 10px;">Element</a> <a href="/tags/HashMap-TreeMap-LinkMap/" style="font-size: 10px;">HashMap,TreeMap,LinkMap</a> <a href="/tags/Junit/" style="font-size: 10px;">Junit</a> <a href="/tags/Lambda/" style="font-size: 10px;">Lambda</a> <a href="/tags/List/" style="font-size: 10px;">List</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/MutiThead/" style="font-size: 10px;">MutiThead</a> <a href="/tags/Read-properties/" style="font-size: 10px;">Read->properties</a> <a href="/tags/Read-xml/" style="font-size: 10px;">Read->xml</a> <a href="/tags/Reader-BufferReader/" style="font-size: 10px;">Reader,BufferReader</a> <a href="/tags/RequestMapping/" style="font-size: 10px;">RequestMapping</a> <a href="/tags/ResquestMappingHandlerMapping-debug/" style="font-size: 10px;">ResquestMappingHandlerMapping debug</a> <a href="/tags/Runable/" style="font-size: 10px;">Runable</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Thead/" style="font-size: 10px;">Thead</a> <a href="/tags/TheadPool/" style="font-size: 10px;">TheadPool</a> <a href="/tags/TreeSetConstructor/" style="font-size: 10px;">TreeSetConstructor</a> <a href="/tags/Writer-BufferWriter/" style="font-size: 10px;">Writer,BufferWriter</a> <a href="/tags/concat/" style="font-size: 10px;">concat</a> <a href="/tags/invoke/" style="font-size: 10px;">invoke</a> <a href="/tags/junit/" style="font-size: 10px;">junit</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/logback/" style="font-size: 10px;">logback</a> <a href="/tags/logout/" style="font-size: 10px;">logout</a> <a href="/tags/mapToObj/" style="font-size: 10px;">mapToObj</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/reflect/" style="font-size: 10px;">reflect</a> <a href="/tags/reflect-debug/" style="font-size: 10px;">reflect debug</a> <a href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" style="font-size: 10px;">两种方式复制MP4</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;">事件监听</a> <a href="/tags/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/" style="font-size: 10px;">匿名内部类</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%A4%9A%E6%80%81/" style="font-size: 10px;">多态</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 20px;">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" style="font-size: 10px;">抽象类</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/07/17/Web-Spring-Start/">Web-Spring-Start</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/08/Lmr-first-annotation/">Lmrzzz-first-Annotation</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/06/Lmr-first-reflect/">Lmrzzz-first-reflect</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/05/Lmr-first-mutiThead/">Lmrzzz-first-mutiThead</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/04/Lmr-first-anonyclass/">Lmrzzz-first-anonyclass</a>
-          </li>
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
         
       </ul>
     </div>
   </div>
+</nav>
 
   
-</aside>
+  
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap">奇怪的Lmr</h1>
+        
+          <h2 class="title-sub-wrap">人生是一场体验</h2>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+  
 
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+</header>
+
+    <!-- 首页 -->
+
+<!-- post list container -->
+<div class="body-container">
+  <div class="content-container layout-block article-list">
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/04/Lmr-first-io-copybyte/" itemprop="url">
+                <h2 class="card-text--title">Lmr-first-io-copybyte.md</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-04T04:30:15.000Z" itemprop="datePublished">2024-07-04</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/">🏷️ 两种方式复制MP4</a></li>
+  
+    <li><a href="/tags/BufferInputStream/">🏷️ BufferInputStream</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/04/Lmr-fitst-io-charater/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-first-io-charater</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-04T00:40:14.000Z" itemprop="datePublished">2024-07-04</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/">🏷️ 字符流</a></li>
+  
+    <li><a href="/tags/Reader-BufferReader/">🏷️ Reader,BufferReader</a></li>
+  
+    <li><a href="/tags/Writer-BufferWriter/">🏷️ Writer,BufferWriter</a></li>
+  
+    <li><a href="/tags/Copy/">🏷️ Copy</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/03/Lmr-first-Stream/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-First-Stream</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-03T09:40:14.000Z" itemprop="datePublished">2024-07-03</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/Stream/">🏷️ Stream</a></li>
+  
+    <li><a href="/tags/concat/">🏷️ concat</a></li>
+  
+    <li><a href="/tags/mapToObj/">🏷️ mapToObj</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/02/Lmr-first-Collection-Map/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-first-Collection-Map</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-02T13:38:20.000Z" itemprop="datePublished">2024-07-02</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/Map/">🏷️ Map</a></li>
+  
+    <li><a href="/tags/HashMap-TreeMap-LinkMap/">🏷️ HashMap,TreeMap,LinkMap</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/02/lmr-second-landord/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-second-TreeSet</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-02T09:40:14.000Z" itemprop="datePublished">2024-07-02</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/Comparator/">🏷️ Comparator</a></li>
+  
+    <li><a href="/tags/TreeSetConstructor/">🏷️ TreeSetConstructor</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/02/Lmr-first-Collection-List/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-first-Collection-list</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-02T03:12:00.000Z" itemprop="datePublished">2024-07-02</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/List/">🏷️ List</a></li>
+  
+    <li><a href="/tags/Set/">🏷️ Set</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/01/Lmr-first-konw-io/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-first-io</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-01T11:30:15.000Z" itemprop="datePublished">2024-07-01</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/">🏷️ 字符流</a></li>
+  
+    <li><a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/">🏷️ 字节流</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/07/01/Lmr-first-know-listen/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-first-swing</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-07-01T11:30:15.000Z" itemprop="datePublished">2024-07-01</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/">🏷️ 事件监听</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/06/28/Lmr-first-sort/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-first-sort</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-06-28T13:18:14.000Z" itemprop="datePublished">2024-06-28</time>
+            </div>
+            
+              <div class="last-time">
+                <span>更新于</span>
+                <time  class="article-updated" datetime="2024-07-01T10:20:16.380Z" itemprop="dateUpdated">2024-07-01</time>
+              </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">🏷️ 基本算法</a></li>
+  
+    <li><a href="/tags/%E6%8E%92%E5%BA%8F/">🏷️ 排序</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+      <div class="article-item layout-padding">
+        <article class="card-container article-card content-padding--large soft-size--large soft-style--box">
+          
+
+          <div class="card-text">
+            
+              <a href="/2024/06/28/Lmr-first-memory/" itemprop="url">
+                <h2 class="card-text--title">Lmrzzz-first-memory</h2>
+              </a>
+            
+            <div class="card-text--row">
+              <span>发布于</span>
+              <time  class="article-date" datetime="2024-06-28T01:08:14.000Z" itemprop="datePublished">2024-06-28</time>
+            </div>
+            
+            <ul class="wrap-list light">
+  
+</ul>
+            <ul class="wrap-list light">
+  
+    <li><a href="/tags/%E9%9D%99%E6%80%81/">🏷️ 静态</a></li>
+  
+    <li><a href="/tags/%E5%AD%98%E5%82%A8/">🏷️ 存储</a></li>
+  
+</ul>
+          </div>
+        </article>
+      </div>
+    
+  </div>
+</div>
+
+<!-- page container -->
+
+  <nav class="page-container">
+    
+    <a class="extend prev" rel="prev" href="/">ʚ</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">ɞ</a>
+  </nav>
+
+
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/miiiku/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://twitter.com/guanquanhong" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+</svg>
+          </a>
+        
+      
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">John Doe</a></p>
+
     
 
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  
 
 
 
@@ -643,9 +515,7 @@
 <script src="/js/script.js"></script>
 
 
-
-
-
-  </div>
+  
+  <!-- 尾部用户自定义相关内容 -->
 </body>
 </html>

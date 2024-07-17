@@ -1,237 +1,365 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.2.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="John Doe">
+  
+
+  
+
+  
+
+  <title>Lmrzzz-first-sort | 奇怪的Lmr</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+
+  <!--mathjax latex数学公式显示支持-->
   
   
-  <title>Lmrzzz-first-sort | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="排序算法：冒泡 选择 插入 快速排序困惑:思路：遇到的困难： 选择排序的j的初始值 快速排序的中间值收获:1返回数组的时候不需要返回值 因为是索引结构     2 快速排序是基于 分划的思想 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Lmrzzz-first-sort">
-<meta property="og:url" content="http://example.com/2024/06/28/Lmr-first-sort/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="排序算法：冒泡 选择 插入 快速排序困惑:思路：遇到的困难： 选择排序的j的初始值 快速排序的中间值收获:1返回数组的时候不需要返回值 因为是索引结构     2 快速排序是基于 分划的思想 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-06-28T13:18:14.000Z">
-<meta property="article:modified_time" content="2024-07-01T10:20:16.380Z">
-<meta property="article:author" content="John Doe">
-<meta property="article:tag" content="基本算法">
-<meta property="article:tag" content="排序">
-<meta name="twitter:card" content="summary">
+
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
-
+</head>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          奇怪的Lmr
+        
+      </a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-Lmr-first-sort" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/28/Lmr-first-sort/" class="article-date">
-  <time class="dt-published" datetime="2024-06-28T13:18:14.000Z" itemprop="datePublished">2024-06-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+      <ul class="navbar-list">
         
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Lmrzzz-first-sort
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>排序算法：冒泡 选择 插入 快速排序<br>困惑:<br>思路：<br>遇到的困难： 选择排序的j的初始值 快速排序的中间值<br>收获:1返回数组的时候不需要返回值 因为是索引结构<br>     2 快速排序是基于 分划的思想</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; ints.length; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[i] &gt; ints[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                    swap(ints, i, i + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Selection</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="comment">//选择排序 有最小的就往前面放</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">minIndex</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; ints.length - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[j] &lt; ints[minIndex]) &#123;</span><br><span class="line">                    minIndex = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(ints, minIndex, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Insertion</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="comment">//key要排列的元素</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">key</span> <span class="operator">=</span> ints[i];</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i - <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//j是要排遍历的起点</span></span><br><span class="line">            <span class="comment">//当前面的值大于key的时候 就是有序的最后一个比新添加的更大</span></span><br><span class="line">            <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; ints[j] &gt; key) &#123;</span><br><span class="line">                <span class="comment">//将倒数第二赋给最后一个 一直这样递归到第二个赋给第一个</span></span><br><span class="line">                ints[j + <span class="number">1</span>] = ints[j];</span><br><span class="line">                j = j - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ints[j + <span class="number">1</span>] = key;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//快速排序 划分治之的思想</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">QuickSort</span><span class="params">(<span class="type">int</span>[] ints,<span class="type">int</span> low,<span class="type">int</span> high)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (low&lt;high)&#123;</span><br><span class="line">            <span class="type">int</span> pivotIndex=partition(ints,low,high);</span><br><span class="line">            partition(ints,low,pivotIndex-<span class="number">1</span>);</span><br><span class="line">            partition(ints,pivotIndex+<span class="number">1</span>,high);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="type">int</span> pivot=arr[high];</span><br><span class="line">    <span class="type">int</span> i=(low-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">0</span>; i1 &lt; high; i1++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i1]&lt;pivot)&#123;</span><br><span class="line">                i1++;</span><br><span class="line">                <span class="type">int</span> temp=arr[i];</span><br><span class="line">                arr[i]=arr[i1];</span><br><span class="line">                arr[i]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> temp=arr[i+<span class="number">1</span>];</span><br><span class="line">        arr[i+<span class="number">1</span>]=arr[high];</span><br><span class="line">        arr[high]=temp;</span><br><span class="line">        <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/28/Lmr-first-sort/" data-id="clyplstch000pigv0f3xhh074" data-title="Lmrzzz-first-sort" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2024/07/01/Lmr-first-know-listen/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+          <li class="navbar-list-item"><a href="/">首页</a></li>
         
-          Lmrzzz-first-swing
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
         
-      </div>
-    </a>
-  
-  
-    <a href="/2024/06/28/Lmr-first-memory/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Lmrzzz-first-memory</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Annotation/" rel="tag">Annotation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BufferInputStream/" rel="tag">BufferInputStream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Callable/" rel="tag">Callable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comparator/" rel="tag">Comparator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Copy/" rel="tag">Copy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Document/" rel="tag">Document</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Element/" rel="tag">Element</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap-TreeMap-LinkMap/" rel="tag">HashMap,TreeMap,LinkMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Junit/" rel="tag">Junit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lambda/" rel="tag">Lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/List/" rel="tag">List</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Map/" rel="tag">Map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MutiThead/" rel="tag">MutiThead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Read-properties/" rel="tag">Read-&gt;properties</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Read-xml/" rel="tag">Read-&gt;xml</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reader-BufferReader/" rel="tag">Reader,BufferReader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RequestMapping/" rel="tag">RequestMapping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ResquestMappingHandlerMapping-debug/" rel="tag">ResquestMappingHandlerMapping debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Runable/" rel="tag">Runable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Set/" rel="tag">Set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stream/" rel="tag">Stream</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thead/" rel="tag">Thead</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheadPool/" rel="tag">TheadPool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TreeSetConstructor/" rel="tag">TreeSetConstructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Writer-BufferWriter/" rel="tag">Writer,BufferWriter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/concat/" rel="tag">concat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/invoke/" rel="tag">invoke</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/junit/" rel="tag">junit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda/" rel="tag">lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logback/" rel="tag">logback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logout/" rel="tag">logout</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mapToObj/" rel="tag">mapToObj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/" rel="tag">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflect/" rel="tag">reflect</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reflect-debug/" rel="tag">reflect debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" rel="tag">两种方式复制MP4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" rel="tag">事件监听</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/" rel="tag">匿名内部类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" rel="tag">基本算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E6%80%81/" rel="tag">多态</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" rel="tag">字符流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" rel="tag">字节流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%98%E5%82%A8/" rel="tag">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" rel="tag">抽象类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%92%E5%BA%8F/" rel="tag">排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%9A%E4%B8%BE/" rel="tag">枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%87%8D%E5%86%99/" rel="tag">重写</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9D%99%E6%80%81/" rel="tag">静态</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Annotation/" style="font-size: 10px;">Annotation</a> <a href="/tags/BufferInputStream/" style="font-size: 10px;">BufferInputStream</a> <a href="/tags/Callable/" style="font-size: 10px;">Callable</a> <a href="/tags/Comparator/" style="font-size: 10px;">Comparator</a> <a href="/tags/Copy/" style="font-size: 10px;">Copy</a> <a href="/tags/Document/" style="font-size: 10px;">Document</a> <a href="/tags/Element/" style="font-size: 10px;">Element</a> <a href="/tags/HashMap-TreeMap-LinkMap/" style="font-size: 10px;">HashMap,TreeMap,LinkMap</a> <a href="/tags/Junit/" style="font-size: 10px;">Junit</a> <a href="/tags/Lambda/" style="font-size: 10px;">Lambda</a> <a href="/tags/List/" style="font-size: 10px;">List</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/MutiThead/" style="font-size: 10px;">MutiThead</a> <a href="/tags/Read-properties/" style="font-size: 10px;">Read->properties</a> <a href="/tags/Read-xml/" style="font-size: 10px;">Read->xml</a> <a href="/tags/Reader-BufferReader/" style="font-size: 10px;">Reader,BufferReader</a> <a href="/tags/RequestMapping/" style="font-size: 10px;">RequestMapping</a> <a href="/tags/ResquestMappingHandlerMapping-debug/" style="font-size: 10px;">ResquestMappingHandlerMapping debug</a> <a href="/tags/Runable/" style="font-size: 10px;">Runable</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/Stream/" style="font-size: 10px;">Stream</a> <a href="/tags/Thead/" style="font-size: 10px;">Thead</a> <a href="/tags/TheadPool/" style="font-size: 10px;">TheadPool</a> <a href="/tags/TreeSetConstructor/" style="font-size: 10px;">TreeSetConstructor</a> <a href="/tags/Writer-BufferWriter/" style="font-size: 10px;">Writer,BufferWriter</a> <a href="/tags/concat/" style="font-size: 10px;">concat</a> <a href="/tags/invoke/" style="font-size: 10px;">invoke</a> <a href="/tags/junit/" style="font-size: 10px;">junit</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/logback/" style="font-size: 10px;">logback</a> <a href="/tags/logout/" style="font-size: 10px;">logout</a> <a href="/tags/mapToObj/" style="font-size: 10px;">mapToObj</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/reflect/" style="font-size: 10px;">reflect</a> <a href="/tags/reflect-debug/" style="font-size: 10px;">reflect debug</a> <a href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" style="font-size: 10px;">两种方式复制MP4</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;">事件监听</a> <a href="/tags/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/" style="font-size: 10px;">匿名内部类</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;">基本算法</a> <a href="/tags/%E5%A4%9A%E6%80%81/" style="font-size: 10px;">多态</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 20px;">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;">存储</a> <a href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" style="font-size: 10px;">抽象类</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">排序</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;">枚举</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;">静态</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/07/17/Web-Spring-Start/">Web-Spring-Start</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/08/Lmr-first-annotation/">Lmrzzz-first-Annotation</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/06/Lmr-first-reflect/">Lmrzzz-first-reflect</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/05/Lmr-first-mutiThead/">Lmrzzz-first-mutiThead</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/04/Lmr-first-anonyclass/">Lmrzzz-first-anonyclass</a>
-          </li>
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
         
       </ul>
     </div>
   </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
 </nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Lmrzzz-first-sort</h1>
+          <h2 class="title-sub-wrap">
+            <strong>John Doe</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-06-28T13:18:14.000Z" itemprop="datePublished">2024-06-28</time>
+          </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2024-07-01T10:20:16.380Z" itemprop="dateUpdated">2024-07-01</time>
+            </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">🏷️ 基本算法</a></li>
+  
+    <li><a href="/tags/%E6%8E%92%E5%BA%8F/">🏷️ 排序</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <p>排序算法：冒泡 选择 插入 快速排序<br>困惑:<br>思路：<br>遇到的困难： 选择排序的j的初始值 快速排序的中间值<br>收获:1返回数组的时候不需要返回值 因为是索引结构<br>     2 快速排序是基于 分划的思想</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">bubbleSort</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; ints.length; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[i] &gt; ints[i + <span class="number">1</span>]) &#123;</span><br><span class="line">                    swap(ints, i, i + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Selection</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="comment">//选择排序 有最小的就往前面放</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">minIndex</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i; j &lt; ints.length - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ints[j] &lt; ints[minIndex]) &#123;</span><br><span class="line">                    minIndex = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(ints, minIndex, i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">Insertion</span><span class="params">(<span class="type">int</span>[] ints)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; ints.length; i++) &#123;</span><br><span class="line">            <span class="comment">//key要排列的元素</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">key</span> <span class="operator">=</span> ints[i];</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i - <span class="number">1</span>;</span><br><span class="line">            <span class="comment">//j是要排遍历的起点</span></span><br><span class="line">            <span class="comment">//当前面的值大于key的时候 就是有序的最后一个比新添加的更大</span></span><br><span class="line">            <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; ints[j] &gt; key) &#123;</span><br><span class="line">                <span class="comment">//将倒数第二赋给最后一个 一直这样递归到第二个赋给第一个</span></span><br><span class="line">                ints[j + <span class="number">1</span>] = ints[j];</span><br><span class="line">                j = j - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ints[j + <span class="number">1</span>] = key;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//快速排序 划分治之的思想</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">QuickSort</span><span class="params">(<span class="type">int</span>[] ints,<span class="type">int</span> low,<span class="type">int</span> high)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (low&lt;high)&#123;</span><br><span class="line">            <span class="type">int</span> pivotIndex=partition(ints,low,high);</span><br><span class="line">            partition(ints,low,pivotIndex-<span class="number">1</span>);</span><br><span class="line">            partition(ints,pivotIndex+<span class="number">1</span>,high);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> low, <span class="type">int</span> high)</span> &#123;</span><br><span class="line">    <span class="type">int</span> pivot=arr[high];</span><br><span class="line">    <span class="type">int</span> i=(low-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i1</span> <span class="operator">=</span> <span class="number">0</span>; i1 &lt; high; i1++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i1]&lt;pivot)&#123;</span><br><span class="line">                i1++;</span><br><span class="line">                <span class="type">int</span> temp=arr[i];</span><br><span class="line">                arr[i]=arr[i1];</span><br><span class="line">                arr[i]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> temp=arr[i+<span class="number">1</span>];</span><br><span class="line">        arr[i+<span class="number">1</span>]=arr[high];</span><br><span class="line">        arr[high]=temp;</span><br><span class="line">        <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/07/01/Lmr-first-know-listen/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Lmrzzz-first-swing</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/06/28/Lmr-first-memory/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">Lmrzzz-first-memory</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://s.gravatar.com/avatar/2d6b803eea37de0257620d5fabee7e64?s=200&amp;r=g&amp;d=retro" class="soft-size--round soft-style--box" alt="Sukoshi">
+    
+    
+      <h2>Sukoshi</h2>
+    
+    
+      <p>贵在坚持</p>
     
 
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>22</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        0
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        49
+      </div>
+    </div>
+  </div>
+</section>
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>flex-block主题部分重构，详情查看https://github.com/miiiku/flex-block</p>
+  </div>
+</section>
+
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/Annotation/" style="font-size: 10px;" class="tags-cloud-0">Annotation</a> <a href="/tags/BufferInputStream/" style="font-size: 10px;" class="tags-cloud-0">BufferInputStream</a> <a href="/tags/Callable/" style="font-size: 10px;" class="tags-cloud-0">Callable</a> <a href="/tags/Comparator/" style="font-size: 10px;" class="tags-cloud-0">Comparator</a> <a href="/tags/Copy/" style="font-size: 10px;" class="tags-cloud-0">Copy</a> <a href="/tags/Document/" style="font-size: 10px;" class="tags-cloud-0">Document</a> <a href="/tags/Element/" style="font-size: 10px;" class="tags-cloud-0">Element</a> <a href="/tags/HashMap-TreeMap-LinkMap/" style="font-size: 10px;" class="tags-cloud-0">HashMap,TreeMap,LinkMap</a> <a href="/tags/Junit/" style="font-size: 10px;" class="tags-cloud-0">Junit</a> <a href="/tags/Lambda/" style="font-size: 10px;" class="tags-cloud-0">Lambda</a> <a href="/tags/List/" style="font-size: 10px;" class="tags-cloud-0">List</a> <a href="/tags/Map/" style="font-size: 10px;" class="tags-cloud-0">Map</a> <a href="/tags/MutiThead/" style="font-size: 10px;" class="tags-cloud-0">MutiThead</a> <a href="/tags/Read-properties/" style="font-size: 10px;" class="tags-cloud-0">Read->properties</a> <a href="/tags/Read-xml/" style="font-size: 10px;" class="tags-cloud-0">Read->xml</a> <a href="/tags/Reader-BufferReader/" style="font-size: 10px;" class="tags-cloud-0">Reader,BufferReader</a> <a href="/tags/RequestMapping/" style="font-size: 10px;" class="tags-cloud-0">RequestMapping</a> <a href="/tags/ResquestMappingHandlerMapping-debug/" style="font-size: 10px;" class="tags-cloud-0">ResquestMappingHandlerMapping debug</a> <a href="/tags/Runable/" style="font-size: 10px;" class="tags-cloud-0">Runable</a> <a href="/tags/Set/" style="font-size: 10px;" class="tags-cloud-0">Set</a> <a href="/tags/Spring/" style="font-size: 10px;" class="tags-cloud-0">Spring</a> <a href="/tags/Stream/" style="font-size: 10px;" class="tags-cloud-0">Stream</a> <a href="/tags/Thead/" style="font-size: 10px;" class="tags-cloud-0">Thead</a> <a href="/tags/TheadPool/" style="font-size: 10px;" class="tags-cloud-0">TheadPool</a> <a href="/tags/TreeSetConstructor/" style="font-size: 10px;" class="tags-cloud-0">TreeSetConstructor</a> <a href="/tags/Writer-BufferWriter/" style="font-size: 10px;" class="tags-cloud-0">Writer,BufferWriter</a> <a href="/tags/concat/" style="font-size: 10px;" class="tags-cloud-0">concat</a> <a href="/tags/invoke/" style="font-size: 10px;" class="tags-cloud-0">invoke</a> <a href="/tags/junit/" style="font-size: 10px;" class="tags-cloud-0">junit</a> <a href="/tags/lambda/" style="font-size: 10px;" class="tags-cloud-0">lambda</a> <a href="/tags/logback/" style="font-size: 10px;" class="tags-cloud-0">logback</a> <a href="/tags/logout/" style="font-size: 10px;" class="tags-cloud-0">logout</a> <a href="/tags/mapToObj/" style="font-size: 10px;" class="tags-cloud-0">mapToObj</a> <a href="/tags/proxy/" style="font-size: 10px;" class="tags-cloud-0">proxy</a> <a href="/tags/reflect/" style="font-size: 10px;" class="tags-cloud-0">reflect</a> <a href="/tags/reflect-debug/" style="font-size: 10px;" class="tags-cloud-0">reflect debug</a> <a href="/tags/%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F%E5%A4%8D%E5%88%B6MP4/" style="font-size: 10px;" class="tags-cloud-0">两种方式复制MP4</a> <a href="/tags/%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/" style="font-size: 10px;" class="tags-cloud-0">事件监听</a> <a href="/tags/%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/" style="font-size: 10px;" class="tags-cloud-0">匿名内部类</a> <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" style="font-size: 10px;" class="tags-cloud-0">基本算法</a> <a href="/tags/%E5%A4%9A%E6%80%81/" style="font-size: 10px;" class="tags-cloud-0">多态</a> <a href="/tags/%E5%AD%97%E7%AC%A6%E6%B5%81/" style="font-size: 20px;" class="tags-cloud-10">字符流</a> <a href="/tags/%E5%AD%97%E8%8A%82%E6%B5%81/" style="font-size: 10px;" class="tags-cloud-0">字节流</a> <a href="/tags/%E5%AD%98%E5%82%A8/" style="font-size: 10px;" class="tags-cloud-0">存储</a> <a href="/tags/%E6%8A%BD%E8%B1%A1%E7%B1%BB/" style="font-size: 10px;" class="tags-cloud-0">抽象类</a> <a href="/tags/%E6%8E%92%E5%BA%8F/" style="font-size: 10px;" class="tags-cloud-0">排序</a> <a href="/tags/%E6%9E%9A%E4%B8%BE/" style="font-size: 10px;" class="tags-cloud-0">枚举</a> <a href="/tags/%E9%87%8D%E5%86%99/" style="font-size: 10px;" class="tags-cloud-0">重写</a> <a href="/tags/%E9%9D%99%E6%80%81/" style="font-size: 10px;" class="tags-cloud-0">静态</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/miiiku/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+          <a href="https://twitter.com/guanquanhong" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-twitter" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M962.285714 233.142857q-38.285714 56-92.571429 95.428571 0.571429 8 0.571429 24 0 74.285714-21.714286 148.285714t-66 142-105.428571 120.285714-147.428571 83.428571-184.571429 31.142857q-154.857143 0-283.428571-82.857143 20 2.285714 44.571429 2.285714 128.571429 0 229.142857-78.857143-60-1.142857-107.428571-36.857143t-65.142857-91.142857q18.857143 2.857143 34.857143 2.857143 24.571429 0 48.571429-6.285714-64-13.142857-106-63.714286t-42-117.428571l0-2.285714q38.857143 21.714286 83.428571 23.428571-37.714286-25.142857-60-65.714286t-22.285714-88q0-50.285714 25.142857-93.142857 69.142857 85.142857 168.285714 136.285714t212.285714 56.857143q-4.571429-21.714286-4.571429-42.285714 0-76.571429 54-130.571429t130.571429-54q80 0 134.857143 58.285714 62.285714-12 117.142857-44.571429-21.142857 65.714286-81.142857 101.714286 53.142857-5.714286 106.285714-28.571429z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">John Doe</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  
 
 
 
@@ -239,9 +367,7 @@
 <script src="/js/script.js"></script>
 
 
-
-
-
-  </div>
+  
+  <!-- 尾部用户自定义相关内容 -->
 </body>
 </html>
